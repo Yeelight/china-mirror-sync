@@ -75,6 +75,31 @@ test("GitLab.com adapter encodes the namespace path and uses project uploads for
   assert.equal(adapter.capabilities().releaseAssetDigest, "unsupported");
 });
 
+test("GitLab.com probes custom release link sizes for audits", async () => {
+  const config = {
+    ...platform("gitlab-com", "https://gitlab.example/api/v4", "https://gitlab.example", "Yeelight"),
+    namespaceId: 99,
+  };
+  const adapter = createPlatformAdapter(config, {
+    token: "secret",
+    fetchImpl: async (url, options = {}) => {
+      if (options.method === "HEAD") {
+        return new Response(null, { status: 200, headers: { "content-length": "3" } });
+      }
+      return Response.json([{
+        tag_name: "v1",
+        name: "v1",
+        description: "notes",
+        assets: { links: [{ id: 1, name: "app.zip", direct_asset_url: "https://files.example/app.zip" }] },
+      }]);
+    },
+  });
+
+  const releases = await adapter.listReleases({ name: "demo" });
+  const assets = await adapter.listReleaseAssets({ name: "demo" }, releases[0]);
+  assert.equal(assets[0].size, 3);
+});
+
 test("Gitee maps an empty GitHub release body to a canonical source link", async () => {
   const requests = [];
   const adapter = createPlatformAdapter(

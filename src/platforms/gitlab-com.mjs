@@ -25,7 +25,7 @@ export function createGitLabComAdapter(config, { token, fetchImpl = fetch } = {}
     listReleases: (source) => listReleases(context, source),
     createOrUpdateRelease: (source, release, targetRelease) => upsertRelease(context, source, release, targetRelease),
     deleteRelease: (source, release) => deleteRelease(context, source, release),
-    listReleaseAssets: async (_source, release) => release.assets || [],
+    listReleaseAssets: (_source, release) => listReleaseAssets(context, release),
     uploadReleaseAsset: (source, release, asset) => uploadReleaseAsset(context, source, release, asset),
     deleteManagedReleaseAsset: (source, release, asset) => deleteReleaseAsset(context, source, release, asset),
     audit: async (sourceSnapshot, targetSnapshot) => ({ sourceSnapshot, targetSnapshot }),
@@ -108,6 +108,27 @@ async function uploadReleaseAsset(context, source, release, asset) {
     method: "POST",
     body: JSON.stringify({ name: asset.name, url: absoluteUrl(context.config.webBaseUrl, upload.full_path || upload.url) }),
   });
+}
+
+async function listReleaseAssets(context, release) {
+  return Promise.all((release.assets || []).map(async (asset) => {
+    if (Number.isInteger(asset.size)) return asset;
+    const url = asset.direct_asset_url || asset.url;
+    if (!url) throw new Error(`GitLab.com release asset URL is missing: ${release.tagName}/${asset.name}`);
+    const response = await context.fetchImpl(url, {
+      method: "HEAD",
+      redirect: "follow",
+      signal: AbortSignal.timeout(30_000),
+    });
+    if (!response.ok) {
+      throw new Error(`GitLab.com release asset size probe failed with HTTP ${response.status}: ${release.tagName}/${asset.name}`);
+    }
+    const size = Number(response.headers.get("content-length"));
+    if (!Number.isInteger(size) || size < 0) {
+      throw new Error(`GitLab.com release asset size is unavailable: ${release.tagName}/${asset.name}`);
+    }
+    return { ...asset, size };
+  }));
 }
 
 async function deleteRelease(context, source, release) {
