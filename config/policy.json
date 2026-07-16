@@ -1,0 +1,21 @@
+{
+  "source": {
+    "organization": "Yeelight",
+    "canonicalHost": "github.com"
+  },
+  "schedule": {
+    "assetSyncFrom": "2026-07-16T00:00:00Z"
+  },
+  "git": {
+    "namespaces": [
+      "refs/heads/*",
+      "refs/tags/*",
+      "refs/notes/*"
+    ]
+  },
+  "releases": {
+    "metadata": "all",
+    "initialAssets": "latest-stable",
+    "futureAssets": "all"
+  }
+}

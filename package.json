@@ -1,0 +1,17 @@
+{
+  "name": "@yeelight/china-mirror-sync",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mirror Yeelight public repositories and releases to Gitee, GitCode, GitLab.com, and future platforms.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test",
+    "test:unit": "node --test test/unit/*.test.mjs",
+    "test:integration": "node --test test/integration/*.test.mjs",
+    "check": "node --check src/cli.mjs && node --test"
+  },
+  "license": "Apache-2.0"
+}

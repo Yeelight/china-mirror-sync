@@ -1,0 +1,140 @@
+name: Mirror public repositories
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Operation mode
+        type: choice
+        options: [plan, sync, audit]
+        default: plan
+      platform:
+        description: Target platform
+        type: choice
+        options: [all, gitee, gitcode, gitlab-com]
+        default: all
+      repository:
+        description: Exact repository name or all
+        type: string
+        default: all
+
+concurrency:
+  group: china-mirror-sync
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  mirror:
+    name: ${{ matrix.platform }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: gitee
+            secret: GITEE_TOKEN
+            username: GITEE_USERNAME
+          - platform: gitcode
+            secret: GITCODE_TOKEN
+            username: GITCODE_USERNAME
+          - platform: gitlab-com
+            secret: GITLAB_COM_TOKEN
+            username: UNUSED_GITLAB_USERNAME
+    env:
+      MODE: ${{ github.event_name == 'schedule' && 'sync' || inputs.mode }}
+      SELECTED_PLATFORM: ${{ github.event_name == 'schedule' && 'all' || inputs.platform }}
+      REPOSITORY: ${{ github.event_name == 'schedule' && 'all' || inputs.repository }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      MIRROR_TOKEN: ${{ secrets[matrix.secret] }}
+      MIRROR_USERNAME: ${{ vars[matrix.username] }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Select platform
+        id: select
+        shell: bash
+        run: |
+          if [[ "$SELECTED_PLATFORM" == "all" || "$SELECTED_PLATFORM" == "${{ matrix.platform }}" ]]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Load durable state
+        if: steps.select.outputs.enabled == 'true'
+        shell: bash
+        run: |
+          mkdir -p .mirror-state
+          if git fetch origin mirror-state; then
+            git archive origin/mirror-state "state/platforms/${{ matrix.platform }}" | tar -x -C .mirror-state
+          fi
+      - name: Run mirror
+        id: mirror
+        if: steps.select.outputs.enabled == 'true'
+        continue-on-error: true
+        shell: bash
+        run: |
+          node src/cli.mjs "$MODE" \
+            --platform "${{ matrix.platform }}" \
+            --repository "$REPOSITORY" \
+            --state-dir .mirror-state > report.json
+          jq -r '.summary | to_entries[] | "\(.key): \(.value)"' report.json >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload report
+        if: always() && steps.select.outputs.enabled == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: report-${{ matrix.platform }}
+          path: report.json
+          if-no-files-found: warn
+      - name: Upload platform state
+        if: always() && env.MODE == 'sync' && steps.select.outputs.enabled == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: state-${{ matrix.platform }}
+          path: .mirror-state/state/platforms/${{ matrix.platform }}
+          if-no-files-found: warn
+      - name: Propagate mirror failure
+        if: steps.mirror.outcome == 'failure'
+        run: exit 1
+
+  publish-state:
+    if: always() && (github.event_name == 'schedule' || inputs.mode == 'sync')
+    needs: mirror
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: state-*
+          path: merged
+      - name: Publish mirror-state branch
+        shell: bash
+        run: |
+          git config user.name "yeelight-mirror-bot"
+          git config user.email "mirror-bot@users.noreply.github.com"
+          if git fetch origin mirror-state; then
+            git switch --detach origin/mirror-state
+          else
+            git switch --orphan mirror-state
+            git rm -rf .
+          fi
+          mkdir -p state/platforms
+          for artifact in merged/state-*; do
+            platform="${artifact##*/state-}"
+            mkdir -p "state/platforms/$platform"
+            cp -R "$artifact/." "state/platforms/$platform/"
+          done
+          git add state
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "chore(state): update mirror state"
+          git push origin HEAD:mirror-state

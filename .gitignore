@@ -1,0 +1,15 @@
+node_modules/
+.mirror-state/
+reports/
+*.log
+.env
+.env.*
+!.env.example
+coverage/
+dist/
+.env
+.env.*
+*.log
+.DS_Store
+mirror-work/
+test-results/

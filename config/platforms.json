@@ -1,0 +1,32 @@
+{
+  "platforms": [
+    {
+      "id": "gitee",
+      "adapter": "gitee",
+      "apiBaseUrl": "https://gitee.com/api/v5",
+      "webBaseUrl": "https://gitee.com",
+      "namespace": "yeelight",
+      "tokenSecret": "GITEE_TOKEN",
+      "usernameVariable": "GITEE_USERNAME"
+    },
+    {
+      "id": "gitcode",
+      "adapter": "gitcode",
+      "apiBaseUrl": "https://api.gitcode.com/api/v5",
+      "webBaseUrl": "https://gitcode.com",
+      "namespace": "Yeelight",
+      "tokenSecret": "GITCODE_TOKEN",
+      "usernameVariable": "GITCODE_USERNAME"
+    },
+    {
+      "id": "gitlab-com",
+      "adapter": "gitlab-com",
+      "apiBaseUrl": "https://gitlab.com/api/v4",
+      "webBaseUrl": "https://gitlab.com",
+      "namespace": "Yeelight",
+      "namespaceId": 137562811,
+      "tokenSecret": "GITLAB_COM_TOKEN",
+      "gitUsername": "oauth2"
+    }
+  ]
+}
