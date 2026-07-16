@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 
 export function planReleaseSync({ sourceReleases, targetReleases, selectedTags, managedAssets }) {
   const targets = new Map(targetReleases.map((release) => [release.tagName, release]));
+  const sourceTags = new Set(sourceReleases.map((release) => release.tagName));
   const releases = [];
   const assets = [];
 
@@ -16,6 +17,7 @@ export function planReleaseSync({ sourceReleases, targetReleases, selectedTags, 
     if (!selectedTags.has(source.tagName)) continue;
 
     const targetAssets = new Map((target?.assets || []).map((asset) => [asset.name, asset]));
+    const sourceAssetNames = new Set((source.assets || []).map((asset) => asset.name));
     for (const asset of source.assets || []) {
       const key = `${source.tagName}/${asset.name}`;
       const targetAsset = targetAssets.get(asset.name);
@@ -24,11 +26,17 @@ export function planReleaseSync({ sourceReleases, targetReleases, selectedTags, 
         continue;
       }
       if (targetAsset.size === asset.size) continue;
-      const managed = managedAssets[key];
-      if (!managed || managed.size !== targetAsset.size) {
-        throw new Error(`unmanaged release asset drift at ${key}`);
-      }
       assets.push({ action: "replace", tagName: source.tagName, asset, targetAsset });
+    }
+    for (const targetAsset of target?.assets || []) {
+      if (!sourceAssetNames.has(targetAsset.name)) {
+        assets.push({ action: "delete", tagName: source.tagName, targetAsset });
+      }
+    }
+  }
+  for (const target of targetReleases) {
+    if (!sourceTags.has(target.tagName)) {
+      releases.push({ action: "delete", tagName: target.tagName, source: null, target });
     }
   }
 
@@ -51,6 +59,11 @@ export async function executeReleaseSync({
 
   for (const item of plan.releases) {
     if (item.action === "aligned") continue;
+    if (item.action === "delete") {
+      await adapter.deleteRelease(sourceRepository, item.target);
+      releasesByTag.delete(item.tagName);
+      continue;
+    }
     const release = await adapter.createOrUpdateRelease(sourceRepository, item.source, item.target);
     releasesByTag.set(item.tagName, release);
   }
@@ -59,6 +72,11 @@ export async function executeReleaseSync({
   for (const item of plan.assets) {
     const release = releasesByTag.get(item.tagName);
     if (!release) throw new Error(`target release is missing after metadata sync: ${item.tagName}`);
+    if (item.action === "delete") {
+      await adapter.deleteManagedReleaseAsset(sourceRepository, release, item.targetAsset);
+      delete nextManagedAssets[`${item.tagName}/${item.targetAsset.name}`];
+      continue;
+    }
     const verified = await downloadVerifiedAsset(item.asset, { githubToken, fetchImpl, maxAssetBytes });
     if (item.action === "replace") {
       await adapter.deleteManagedReleaseAsset(sourceRepository, release, item.targetAsset);
@@ -69,6 +87,12 @@ export async function executeReleaseSync({
       sha256: verified.sha256,
       synchronizedAt: new Date().toISOString(),
     };
+  }
+  for (const item of plan.releases) {
+    if (item.action !== "delete") continue;
+    for (const key of Object.keys(nextManagedAssets)) {
+      if (key.startsWith(`${item.tagName}/`)) delete nextManagedAssets[key];
+    }
   }
 
   return { plan, managedAssets: nextManagedAssets };

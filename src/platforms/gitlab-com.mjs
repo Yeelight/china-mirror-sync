@@ -23,6 +23,7 @@ export function createGitLabComAdapter(config, { token, fetchImpl = fetch } = {}
       : null,
     listReleases: (source) => listReleases(context, source),
     createOrUpdateRelease: (source, release, targetRelease) => upsertRelease(context, source, release, targetRelease),
+    deleteRelease: (source, release) => deleteRelease(context, source, release),
     listReleaseAssets: async (_source, release) => release.assets || [],
     uploadReleaseAsset: (source, release, asset) => uploadReleaseAsset(context, source, release, asset),
     deleteManagedReleaseAsset: (source, release, asset) => deleteReleaseAsset(context, source, release, asset),
@@ -105,6 +106,12 @@ async function uploadReleaseAsset(context, source, release, asset) {
   return api(context, `/projects/${projectPath(context.config, source.name)}/releases/${encodeURIComponent(release.tagName)}/assets/links`, {
     method: "POST",
     body: JSON.stringify({ name: asset.name, url: absoluteUrl(context.config.webBaseUrl, upload.full_path || upload.url) }),
+  });
+}
+
+async function deleteRelease(context, source, release) {
+  return api(context, `/projects/${projectPath(context.config, source.name)}/releases/${encodeURIComponent(release.tagName)}`, {
+    method: "DELETE",
   });
 }
 

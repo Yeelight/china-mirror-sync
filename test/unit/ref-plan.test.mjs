@@ -17,12 +17,17 @@ test("plans create update and managed deletion with leases", () => {
   ]);
 });
 
-test("stops when a target ref differs from the last managed value", () => {
-  assert.throws(() => planRefChanges({
+test("force-overwrites drift and deletes target-only refs using observed leases", () => {
+  const plan = planRefChanges({
     source: { "refs/heads/main": "new" },
-    target: { "refs/heads/main": "manual" },
+    target: { "refs/heads/main": "manual", "refs/heads/target-only": "extra" },
     previous: { "refs/heads/main": "old" },
-  }), /target drift.*refs\/heads\/main/);
+  });
+
+  assert.deepEqual(plan, [
+    { action: "update", ref: "refs/heads/main", sourceOid: "new", expectedTargetOid: "manual" },
+    { action: "delete", ref: "refs/heads/target-only", sourceOid: null, expectedTargetOid: "extra" },
+  ]);
 });
 
 test("never mirrors GitHub pull request refs", () => {

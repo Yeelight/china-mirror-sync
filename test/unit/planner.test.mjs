@@ -9,27 +9,27 @@ test("creates a missing target repository", () => {
   assert.equal(plan.writeAllowed, true);
 });
 
-test("adopts an existing repository only when its refs already match", () => {
+test("adopts an aligned repository and overwrites a mismatched first-time target", () => {
   const source = snapshot("same");
   const aligned = planRepositorySync({ source, target: snapshot("same"), previous: null });
-  const drifted = planRepositorySync({ source, target: snapshot("different"), previous: null });
+  const overwrite = planRepositorySync({ source, target: snapshot("different"), previous: null });
 
   assert.equal(aligned.status, "adopt");
   assert.equal(aligned.writeAllowed, true);
-  assert.equal(drifted.status, "drifted");
-  assert.equal(drifted.writeAllowed, false);
+  assert.equal(overwrite.status, "overwrite");
+  assert.equal(overwrite.writeAllowed, true);
 });
 
-test("updates a managed target only when it still matches the previous state", () => {
+test("overwrites a managed target when it drifts from the previous state", () => {
   const previous = snapshot("old");
   const source = snapshot("new");
   const safe = planRepositorySync({ source, target: snapshot("old"), previous });
-  const unsafe = planRepositorySync({ source, target: snapshot("manual"), previous });
+  const drifted = planRepositorySync({ source, target: snapshot("manual"), previous });
 
   assert.equal(safe.status, "update");
   assert.equal(safe.writeAllowed, true);
-  assert.equal(unsafe.status, "drifted");
-  assert.equal(unsafe.writeAllowed, false);
+  assert.equal(drifted.status, "overwrite");
+  assert.equal(drifted.writeAllowed, true);
 });
 
 function snapshot(value) {

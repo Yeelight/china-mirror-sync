@@ -25,6 +25,7 @@ export function createGiteeLikeAdapter(config, options = {}) {
       : null,
     listReleases: (source) => listReleases(context, source),
     createOrUpdateRelease: (source, release, targetRelease) => upsertRelease(context, source, release, targetRelease),
+    deleteRelease: (source, release) => deleteRelease(context, source, release),
     listReleaseAssets: (source, release) => listReleaseAssets(context, source, release),
     uploadReleaseAsset: (source, release, asset) => uploadReleaseAsset(context, source, release, asset),
     deleteManagedReleaseAsset: (source, release, asset) => deleteReleaseAsset(context, source, release, asset),
@@ -96,6 +97,12 @@ async function upsertRelease(context, source, release, targetRelease) {
 
 async function listReleaseAssets(context, source, release) {
   return api(context, `/repos/${context.config.namespace}/${safeName(source.name)}/releases/${release.id}/attach_files`);
+}
+
+async function deleteRelease(context, source, release) {
+  return api(context, `/repos/${context.config.namespace}/${safeName(source.name)}/releases/${release.id}`, {
+    method: "DELETE",
+  });
 }
 
 async function uploadReleaseAsset(context, source, release, asset) {

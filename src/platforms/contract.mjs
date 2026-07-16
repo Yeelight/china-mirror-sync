@@ -7,6 +7,7 @@ const REQUIRED_METHODS = [
   "getWikiRemote",
   "listReleases",
   "createOrUpdateRelease",
+  "deleteRelease",
   "listReleaseAssets",
   "uploadReleaseAsset",
   "deleteManagedReleaseAsset",

@@ -26,9 +26,12 @@ requests, stars, Actions, packages and secrets, are explicitly not copied.
 
 ## Safety Model
 
-The synchronizer stops on target-side drift. Credentials are read from GitHub
-Actions Secrets or a local credential provider and never embedded in Git URLs,
-state, reports or repository configuration. See [Architecture](docs/architecture.md),
+GitHub is authoritative: target-side drift is detected and force-converged with
+an observed-value lease, including deletion of target-only mirrored refs and
+Release objects. A concurrent write still fails the lease and is retried on the
+next run. Credentials are read from GitHub Actions Secrets or a local credential
+provider and never embedded in Git URLs, state, reports or repository
+configuration. See [Architecture](docs/architecture.md),
 [Operations](docs/operations.md) and [Security](docs/security.md).
 
 ## Local Verification

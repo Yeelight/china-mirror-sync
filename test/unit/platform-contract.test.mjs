@@ -31,6 +31,7 @@ function completeAdapter() {
     getWikiRemote: () => null,
     listReleases: async () => [],
     createOrUpdateRelease: async () => ({}),
+    deleteRelease: async () => ({}),
     listReleaseAssets: async () => [],
     uploadReleaseAsset: async () => ({}),
     deleteManagedReleaseAsset: async () => ({}),

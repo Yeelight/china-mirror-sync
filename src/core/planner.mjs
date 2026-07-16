@@ -6,12 +6,12 @@ export function planRepositorySync({ source, target, previous }) {
   if (previous === null) {
     return refsEqual(source.refs, target.refs)
       ? plan("adopt", true)
-      : plan("drifted", false);
+      : plan("overwrite", true);
   }
 
   assertSnapshot(previous, "previous");
-  if (!refsEqual(target.refs, previous.refs)) return plan("drifted", false);
   if (refsEqual(source.refs, target.refs)) return plan("aligned", false);
+  if (!refsEqual(target.refs, previous.refs)) return plan("overwrite", true);
   return plan("update", true);
 }
 

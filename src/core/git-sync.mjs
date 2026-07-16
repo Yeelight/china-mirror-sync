@@ -20,27 +20,14 @@ export function planRefChanges({ source, target, previous }) {
   validateRefs(target, "target");
   validateRefs(previous, "previous");
 
-  for (const [ref, targetOid] of Object.entries(target)) {
-    const previousOid = previous[ref];
-    if (previousOid !== undefined && previousOid !== targetOid) {
-      throw new Error(`target drift detected at ${ref}`);
-    }
-    if (previousOid === undefined && source[ref] !== targetOid) {
-      throw new Error(`unmanaged target ref blocks synchronization: ${ref}`);
-    }
-  }
-
   const changes = [];
-  const refs = new Set([...Object.keys(source), ...Object.keys(previous)]);
+  const refs = new Set([...Object.keys(source), ...Object.keys(target)]);
   for (const ref of [...refs].sort()) {
     const sourceOid = source[ref];
     const targetOid = target[ref];
-    const previousOid = previous[ref];
     if (sourceOid === targetOid) continue;
     if (sourceOid === undefined) {
-      if (previousOid !== undefined && targetOid === previousOid) {
-        changes.push(change("delete", ref, null, targetOid));
-      }
+      changes.push(change("delete", ref, null, targetOid));
       continue;
     }
     changes.push(change(targetOid === undefined ? "create" : "update", ref, sourceOid, targetOid ?? null));
@@ -82,8 +69,7 @@ export async function synchronizeGitRepository({
     if (refsEqual(sourceRefs, targetRefs)) {
       return { status: "adopted", sourceRefs, targetRefs, changes: [] };
     }
-    if (Object.keys(targetRefs).length > 0) throw new Error("target drift blocks first-time adoption");
-    managedRefs = {};
+    managedRefs = targetRefs;
   }
   const changes = planRefChanges({ source: sourceRefs, target: targetRefs, previous: managedRefs });
   if (dryRun || changes.length === 0) {

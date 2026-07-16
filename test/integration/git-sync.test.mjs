@@ -7,7 +7,7 @@ import test from "node:test";
 
 import { listRemoteRefs, synchronizeGitRepository } from "../../src/core/git-sync.mjs";
 
-test("synchronizes allowed refs and rejects target-side drift", async (t) => {
+test("synchronizes allowed refs and force-overwrites target-side drift", async (t) => {
   const root = await mkdtemp(join(tmpdir(), "china-mirror-sync-"));
   t.after(() => rm(root, { recursive: true, force: true }));
   const source = join(root, "source.git");
@@ -38,10 +38,10 @@ test("synchronizes allowed refs and rejects target-side drift", async (t) => {
   assert.equal(second.changes.some((change) => change.action === "delete" && change.ref === "refs/tags/v1"), true);
 
   git(["update-ref", "refs/heads/main", previous["refs/heads/main"]], target);
-  await assert.rejects(
-    synchronizeGitRepository({ sourceUrl: source, targetUrl: target, previousRefs: second.sourceRefs, dryRun: false }),
-    /target drift/,
-  );
+  git(["update-ref", "refs/heads/target-only", previous["refs/heads/main"]], target);
+  const repaired = await synchronizeGitRepository({ sourceUrl: source, targetUrl: target, previousRefs: second.sourceRefs, dryRun: false });
+  assert.equal(repaired.status, "updated");
+  assert.deepEqual(await listRemoteRefs(target), repaired.sourceRefs);
 });
 
 function git(args, cwd) {

@@ -24,8 +24,10 @@ Issue、Pull Request、Star、Actions、Packages、Secrets 等无法保持身份
 
 ## 安全模型
 
-目标仓一旦出现非同步器写入的漂移，任务立即停止，不会强制覆盖。Token 只从 GitHub
-Actions Secrets 或本地安全凭据存储读取，不进入 Git URL、状态、报告或仓库配置。
+GitHub 是绝对规范源：目标侧漂移会被检测并通过基于观测值的 lease 强制收敛，包括
+覆盖不同提交以及删除目标多出的受管 refs、Release 和选定附件；若写入瞬间又发生并发
+修改，lease 会失败并留待下一轮重试。Token 只从 GitHub Actions Secrets 或本地安全
+凭据存储读取，不进入 Git URL、状态、报告或仓库配置。
 详见[架构](docs/architecture.md)、[运维](docs/operations.md)和[安全](docs/security.md)。
 
 ## 本地验证

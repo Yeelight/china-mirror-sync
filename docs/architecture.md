@@ -7,8 +7,10 @@ release selection, state and audit. Adapters own only target API mappings.
 
 Git synchronization accepts only heads, tags and notes. Every changed ref uses
 `--force-with-lease` against the value observed immediately before the write.
-The first run adopts only an empty or exactly aligned target. Subsequent runs
-compare the target with the last successful state and stop on drift.
+An exactly aligned target is adopted without rewriting it. Any target-side
+drift is force-converged to GitHub, including target-only managed refs. Each
+write still leases the value observed immediately before the operation, so a
+concurrent target change cannot be overwritten blindly.
 
 Machine state is stored on the orphan `mirror-state` branch. Platform jobs
 produce isolated state artifacts; one final job merges and publishes them so

@@ -20,16 +20,22 @@ test("plans all release metadata but only selected release assets", () => {
   assert.deepEqual(plan.assets, [{ action: "upload", tagName: "v2", asset: sourceReleases[1].assets[0] }]);
 });
 
-test("blocks unknown same-name assets instead of overwriting them", () => {
+test("force-replaces unknown same-name assets and deletes target-only assets", () => {
   const sourceReleases = [release("v2", [{ name: "app.zip", size: 20 }])];
-  const targetReleases = [release("v2", [{ id: 7, name: "app.zip", size: 10 }])];
+  const targetReleases = [release("v2", [
+    { id: 7, name: "app.zip", size: 10 },
+    { id: 8, name: "target-only.zip", size: 5 },
+  ])];
 
-  assert.throws(() => planReleaseSync({
+  const plan = planReleaseSync({
     sourceReleases,
     targetReleases,
     selectedTags: new Set(["v2"]),
     managedAssets: {},
-  }), /unmanaged release asset drift.*v2\/app.zip/);
+  });
+
+  assert.equal(plan.assets[0].action, "replace");
+  assert.equal(plan.assets[1].action, "delete");
 });
 
 test("replaces a changed asset only when the target still matches managed state", () => {
@@ -44,6 +50,18 @@ test("replaces a changed asset only when the target still matches managed state"
 
   assert.equal(plan.assets[0].action, "replace");
   assert.equal(plan.assets[0].targetAsset.id, 7);
+});
+
+test("deletes target-only releases", () => {
+  const plan = planReleaseSync({
+    sourceReleases: [release("v2", [])],
+    targetReleases: [release("v1", []), release("v2", [])],
+    selectedTags: new Set(),
+    managedAssets: {},
+  });
+
+  assert.equal(plan.releases.at(-1).action, "delete");
+  assert.equal(plan.releases.at(-1).tagName, "v1");
 });
 
 test("executes metadata and verified asset uploads idempotently", async () => {
