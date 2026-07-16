@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "githubId": 1302279729,
+  "repository": "china-mirror-sync",
+  "platform": "gitcode",
+  "refs": {
+    "refs/heads/main": "1bc57fc4677efeaa470ebd0ff7ea82dea6f65f13",
+    "refs/heads/mirror-state": "e33072cce431e2c77fa7bc500670c7bed1e73c2b"
+  },
+  "managedAssets": {},
+  "synchronizedAt": "2026-07-16T04:06:59.243Z"
+}
