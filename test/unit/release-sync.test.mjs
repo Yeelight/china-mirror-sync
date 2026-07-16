@@ -74,7 +74,11 @@ test("executes metadata and verified asset uploads idempotently", async () => {
     downloadUrl: "https://example.com/app.zip",
   }])];
   const adapter = {
-    listReleases: async () => [],
+    listReleases: async () => [{ ...release("v2", []), id: 9, body: "old notes" }],
+    listReleaseAssets: async (_repo, item) => {
+      calls.push(`assets:${item.tagName}`);
+      return item.assets || [];
+    },
     createOrUpdateRelease: async (_repo, item) => {
       calls.push(`release:${item.tagName}`);
       return { id: 9, tagName: item.tagName, assets: [] };
@@ -96,6 +100,7 @@ test("executes metadata and verified asset uploads idempotently", async () => {
   });
 
   assert.deepEqual(calls, [
+    "assets:v2",
     "release:v2",
     "upload:v2:app.zip:ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
   ]);

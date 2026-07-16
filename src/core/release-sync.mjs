@@ -53,7 +53,11 @@ export async function executeReleaseSync({
   fetchImpl = fetch,
   maxAssetBytes = 500 * 1024 * 1024,
 }) {
-  const targetReleases = await adapter.listReleases(sourceRepository);
+  const listedReleases = await adapter.listReleases(sourceRepository);
+  const targetReleases = await Promise.all(listedReleases.map(async (release) => ({
+    ...release,
+    assets: await adapter.listReleaseAssets(sourceRepository, release),
+  })));
   const plan = planReleaseSync({ sourceReleases, targetReleases, selectedTags, managedAssets });
   const releasesByTag = new Map(targetReleases.map((release) => [release.tagName, release]));
 

@@ -12,10 +12,35 @@ export function createGitCodeAdapter(config, { token, fetchImpl = fetch } = {}) 
   const context = { config, token, fetchImpl };
   return {
     ...base,
-    listReleaseAssets: async (_source, release) => release.assets || [],
+    listReleaseAssets: (source, release) => listReleaseAssets(context, source, release),
     uploadReleaseAsset: (source, release, asset) => uploadReleaseAsset(context, source, release, asset),
     deleteManagedReleaseAsset: (source, release, asset) => deleteReleaseAsset(context, source, release, asset),
   };
+}
+
+async function listReleaseAssets(context, source, release) {
+  return Promise.all((release.assets || []).map(async (asset) => {
+    if (Number.isInteger(asset.size)) return asset;
+    const response = await context.fetchImpl(apiUrl(
+      context,
+      source,
+      release,
+      `attach_files/${encodeURIComponent(asset.name)}/download`,
+    ), {
+      method: "HEAD",
+      headers: apiHeaders(context),
+      redirect: "follow",
+      signal: AbortSignal.timeout(30_000),
+    });
+    if (!response.ok) {
+      throw new Error(`GitCode release asset size probe failed with HTTP ${response.status}: ${release.tagName}/${asset.name}`);
+    }
+    const size = Number(response.headers.get("content-length"));
+    if (!Number.isInteger(size) || size < 0) {
+      throw new Error(`GitCode release asset size is unavailable: ${release.tagName}/${asset.name}`);
+    }
+    return { ...asset, size };
+  }));
 }
 
 async function uploadReleaseAsset(context, source, release, asset) {

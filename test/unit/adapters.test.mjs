@@ -95,9 +95,12 @@ test("GitCode uploads release assets through a signed URL and ignores source arc
           body: "notes",
           assets: [
             { type: "source", name: "v1.zip" },
-            { type: "attachment", id: "attachment-1", name: "app.zip", size: 3 },
+            { type: "attachment", id: "attachment-1", name: "app.zip" },
           ],
         }]);
+      }
+      if (String(url).includes("/attach_files/app.zip/download") && options.method === "HEAD") {
+        return new Response(null, { status: 200, headers: { "content-length": "3" } });
       }
       return Response.json([]);
     },
@@ -117,6 +120,8 @@ test("GitCode uploads release assets through a signed URL and ignores source arc
   const releases = await adapter.listReleases({ name: "demo" });
   assert.equal(releases[0].id, "v1");
   assert.deepEqual(releases[0].assets.map((asset) => asset.name), ["app.zip"]);
+  const assets = await adapter.listReleaseAssets({ name: "demo" }, releases[0]);
+  assert.equal(assets[0].size, 3);
 });
 
 test("adapters reject unsafe repository names before issuing HTTP requests", async () => {
