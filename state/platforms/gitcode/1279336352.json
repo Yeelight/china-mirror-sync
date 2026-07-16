@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "githubId": 1279336352,
+  "repository": "yeelight-home",
+  "platform": "gitcode",
+  "refs": {
+    "refs/heads/main": "e926c67264a48ffdb10a5c7407ef48030a1db7ff",
+    "refs/tags/v0.1.1": "6cb7f6c3998c2f90cdb601b7cfd416029b3c07cb",
+    "refs/tags/v0.1.10": "94be249150ffc090818604356c5394721bd8865f",
+    "refs/tags/v0.1.11": "17fb826f26a53e0b390eb0a9e96af356f179f512",
+    "refs/tags/v0.1.12": "5d328ce42c4f9cb661c6ad8e6aa6490b2cdfec76",
+    "refs/tags/v0.1.13": "1a07e15d2f342e487a84f397f9811cd4b2a3cd40",
+    "refs/tags/v0.1.14": "9ce9ef20012f0d094048537a3c6e4b3a46c1bcec",
+    "refs/tags/v0.1.15": "9812f275ea3aaf16784becc6a30e87fbfd321574",
+    "refs/tags/v0.1.16": "d967bbd2ff57f17a3adfb2aeea05151efc6b9d79",
+    "refs/tags/v0.1.17": "346901c593dabbdb9c93c0dc0716c695fb67a52a",
+    "refs/tags/v0.1.18": "4bd12bd9342f194dffe75327b8317f2e95e9224c",
+    "refs/tags/v0.1.19": "1de5ba79f8ec43f43aa705fd94576aad1d5dbfdf",
+    "refs/tags/v0.1.2": "ce7908338cc3a2fccbf2f72fa62027c3f60bf6ef",
+    "refs/tags/v0.1.20": "45fc41d2e398f4fefcf761daedff013005316dd4",
+    "refs/tags/v0.1.21": "e0524d83705b9e713f703dab0d722458582e2253",
+    "refs/tags/v0.1.3": "78d3b8eff0e41595ffa5fac63b13b896f32ddb73",
+    "refs/tags/v0.1.4": "4522c8ebee4b77a753c0933eaa5f21bebb749854",
+    "refs/tags/v0.1.5": "d012ea292467bbe2969949bfe48b4d4bcd6fdc2d",
+    "refs/tags/v0.1.6": "09335a367e369cece612d68651f6bbe48376ae86",
+    "refs/tags/v0.1.7": "3c14a4e7496459de151e04cfdc7c8a9cb448618d",
+    "refs/tags/v0.1.8": "d5637e10854a53a51ac297b9f9b4607155a88b64",
+    "refs/tags/v0.1.9": "d3238e364e6d8a38f6cc436993aa8aaa9d6eeaf0",
+    "refs/tags/yeelight-home-v0.1.0": "ac063bfd3d9b0f3dbbcc9acd9d4cebd9f87d857e"
+  },
+  "managedAssets": {
+    "v0.1.21/yeelight-home_0.1.21_linux_armv7.apk": {
+      "size": 4362340,
+      "sha256": "1f2609cb5f8d1939fde6180b127d69722f466fc40e31d4c8d2ca3c39f7c3170c",
+      "synchronizedAt": "2026-07-16T06:56:29.172Z"
+    }
+  },
+  "synchronizedAt": "2026-07-16T06:56:29.173Z"
+}
