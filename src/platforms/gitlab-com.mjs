@@ -9,7 +9,7 @@ export function createGitLabComAdapter(config, { token, fetchImpl = fetch } = {}
     id: config.id,
     capabilities: () => ({
       metadata: "supported",
-      wiki: "supported",
+      wiki: "unsupported",
       releases: "supported",
       releaseAssets: "supported",
       releaseAssetDigest: "unsupported",
@@ -142,7 +142,6 @@ function normalizeRepository(item) {
     htmlUrl: item.web_url,
     archived: Boolean(item.archived),
     description: item.description || "",
-    topics: Array.isArray(item.topics) ? item.topics : undefined,
   };
 }
 

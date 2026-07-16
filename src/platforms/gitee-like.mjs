@@ -12,7 +12,7 @@ export function createGiteeLikeAdapter(config, options = {}) {
     id: config.id,
     capabilities: () => ({
       metadata: "supported",
-      wiki: "supported",
+      wiki: "unsupported",
       releases: "supported",
       releaseAssets: "supported",
       releaseAssetDigest: "unsupported",
@@ -147,7 +147,6 @@ function normalizeRepository(item) {
     archived: Boolean(item.archived),
     description: item.description || "",
     homepage: item.homepage || "",
-    topics: Array.isArray(item.topics) ? item.topics : undefined,
   };
 }
 
