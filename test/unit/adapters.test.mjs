@@ -72,6 +72,31 @@ test("GitLab.com adapter encodes the namespace path and uses project uploads for
   assert.equal(adapter.capabilities().releaseAssetDigest, "unsupported");
 });
 
+test("Gitee maps an empty GitHub release body to a canonical source link", async () => {
+  const requests = [];
+  const adapter = createPlatformAdapter(
+    platform("gitee", "https://gitee.example/api/v5", "https://gitee.example", "yeelight"),
+    {
+      token: "secret",
+      fetchImpl: async (url, options = {}) => {
+        requests.push({ url: String(url), options });
+        return Response.json({ id: 7, tag_name: "v1", name: "v1", body: JSON.parse(options.body).body });
+      },
+    },
+  );
+
+  await adapter.createOrUpdateRelease(
+    { name: "demo" },
+    { tagName: "v1", name: "v1", body: "", canonicalUrl: "https://github.com/Yeelight/demo/releases/tag/v1" },
+    null,
+  );
+
+  assert.equal(
+    JSON.parse(requests[0].options.body).body,
+    "Canonical release: https://github.com/Yeelight/demo/releases/tag/v1",
+  );
+});
+
 test("GitCode uploads release assets through a signed URL and ignores source archives", async () => {
   const requests = [];
   const config = platform("gitcode", "https://gitcode.example/api/v5", "https://gitcode.example", "Yeelight");

@@ -1,4 +1,5 @@
 import { HttpError, requestJson } from "../core/http.mjs";
+import { portableReleaseBody } from "../core/release-metadata.mjs";
 
 const SAFE_NAME = /^[A-Za-z0-9._-]+$/;
 
@@ -88,7 +89,7 @@ async function upsertRelease(context, source, release, targetRelease) {
     body: JSON.stringify({
       tag_name: release.tagName,
       name: release.name || release.tagName,
-      body: release.body || "",
+      body: portableReleaseBody(release),
       prerelease: Boolean(release.prerelease),
       target_commitish: release.targetCommitish,
     }),
@@ -113,6 +114,8 @@ async function uploadReleaseAsset(context, source, release, asset) {
     method: "POST",
     body,
     json: false,
+    retries: 0,
+    timeoutMs: 10 * 60 * 1000,
   });
 }
 
@@ -142,6 +145,9 @@ function normalizeRepository(item) {
     defaultBranch: item.default_branch,
     htmlUrl: item.html_url,
     archived: Boolean(item.archived),
+    description: item.description || "",
+    homepage: item.homepage || "",
+    topics: Array.isArray(item.topics) ? item.topics : undefined,
   };
 }
 

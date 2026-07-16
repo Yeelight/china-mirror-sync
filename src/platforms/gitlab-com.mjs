@@ -141,6 +141,8 @@ function normalizeRepository(item) {
     defaultBranch: item.default_branch,
     htmlUrl: item.web_url,
     archived: Boolean(item.archived),
+    description: item.description || "",
+    topics: Array.isArray(item.topics) ? item.topics : undefined,
   };
 }
 

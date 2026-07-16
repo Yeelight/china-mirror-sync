@@ -1,5 +1,7 @@
 import { createHash } from "node:crypto";
 
+import { releaseBodiesEquivalent } from "./release-metadata.mjs";
+
 export function planReleaseSync({ sourceReleases, targetReleases, selectedTags, managedAssets }) {
   const targets = new Map(targetReleases.map((release) => [release.tagName, release]));
   const sourceTags = new Set(sourceReleases.map((release) => release.tagName));
@@ -124,5 +126,6 @@ async function downloadVerifiedAsset(asset, { githubToken, fetchImpl, maxAssetBy
 }
 
 function metadataEqual(source, target) {
-  return ["name", "body", "prerelease"].every((field) => (source[field] ?? "") === (target[field] ?? ""));
+  return releaseBodiesEquivalent(source, target)
+    && ["name", "prerelease"].every((field) => (source[field] ?? "") === (target[field] ?? ""));
 }

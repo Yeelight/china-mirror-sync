@@ -8,7 +8,7 @@ import { listRemoteRefs, synchronizeGitRepository } from "./core/git-sync.mjs";
 import { listGitHubReleases } from "./core/github-releases.mjs";
 import { executeReleaseSync } from "./core/release-sync.mjs";
 import { selectReleaseAssets } from "./core/release-policy.mjs";
-import { planMirrors, synchronizeMirrors } from "./core/runner.mjs";
+import { auditMirrors, planMirrors, synchronizeMirrors } from "./core/runner.mjs";
 import { readPlatformState, writePlatformState } from "./core/state.mjs";
 import { createPlatformAdapter } from "./platforms/index.mjs";
 
@@ -55,6 +55,18 @@ const report = command === "sync" ? await synchronizeMirrors({
   writeState: (platformId, githubId, state) => writePlatformState(stateDirectory, platformId, githubId, state),
   sourceCredential: githubToken ? { baseUrl: "https://github.com", username: "x-access-token", token: githubToken } : undefined,
   targetCredential: (platform) => platformCredential(platform),
+}) : command === "audit" ? await auditMirrors({
+  ...shared,
+  listRefs: (url) => listRemoteRefs(url),
+  listSourceReleases: (source) => listGitHubReleases({
+    owner: configuration.policy.source.organization,
+    repository: source.name,
+    token: githubToken,
+  }),
+  selectAssetTags: (releases) => selectReleaseAssets(releases, {
+    assetSyncFrom: configuration.policy.schedule.assetSyncFrom,
+  }),
+  readState: (platformId, githubId) => readPlatformState(stateDirectory, platformId, githubId),
 }) : await planMirrors({
   ...shared,
   listRefs: (url) => listRemoteRefs(url),
@@ -62,8 +74,9 @@ const report = command === "sync" ? await synchronizeMirrors({
 });
 
 process.stdout.write(`${JSON.stringify(report, null, 2)}\n`);
-if (report.plans.some((plan) => plan.status === "failed")) process.exitCode = 1;
-else if (report.plans.some((plan) => plan.status === "drifted")) process.exitCode = 2;
+const results = report.plans || report.audits;
+if (results.some((result) => result.status === "failed")) process.exitCode = 1;
+else if (results.some((result) => result.status === "drifted")) process.exitCode = 2;
 
 function parseArguments(args) {
   const command = args.shift() || "plan";

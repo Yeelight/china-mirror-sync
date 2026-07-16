@@ -1,4 +1,80 @@
 import { planRepositorySync } from "./planner.mjs";
+import { auditRepository } from "./audit.mjs";
+
+export async function auditMirrors({
+  organization,
+  platforms,
+  repositoryFilter = "all",
+  platformFilter = "all",
+  discoverRepositories,
+  createAdapter,
+  listRefs,
+  listSourceReleases,
+  selectAssetTags,
+  readState,
+}) {
+  const repositories = (await discoverRepositories()).filter((repository) => matches(repository.name, repositoryFilter));
+  const selectedPlatforms = platforms.filter((platform) => matches(platform.id, platformFilter));
+  assertSelection(repositories, selectedPlatforms, repositoryFilter, platformFilter);
+
+  const audits = [];
+  for (const platform of selectedPlatforms) {
+    const adapter = createAdapter(platform);
+    for (const source of repositories) {
+      try {
+        const target = await adapter.getRepository(source);
+        if (!target) {
+          audits.push({
+            platform: platform.id,
+            repository: source.name,
+            githubId: source.githubId,
+            ...auditRepository({ source, target: null, capabilities: adapter.capabilities() }),
+          });
+          continue;
+        }
+        const [sourceRefs, targetRefs, previous, sourceReleases, listedTargetReleases] = await Promise.all([
+          listRefs(source.cloneUrl),
+          listRefs(adapter.gitRemote(source)),
+          readState(platform.id, source.githubId),
+          listSourceReleases(source),
+          adapter.listReleases(source),
+        ]);
+        const targetReleases = await Promise.all(listedTargetReleases.map(async (release) => ({
+          ...release,
+          assets: await adapter.listReleaseAssets(source, release),
+        })));
+        const audit = auditRepository({
+          source: { ...source, refs: sourceRefs, releases: sourceReleases },
+          target: { ...target, refs: targetRefs, releases: targetReleases },
+          previous,
+          capabilities: adapter.capabilities(),
+          selectedTags: selectAssetTags(sourceReleases),
+        });
+        audits.push({
+          platform: platform.id,
+          repository: source.name,
+          githubId: source.githubId,
+          ...audit,
+        });
+      } catch (error) {
+        audits.push({
+          platform: platform.id,
+          repository: source.name,
+          githubId: source.githubId,
+          status: "failed",
+          dimensions: { repository: { status: "failed", reason: error.message } },
+        });
+      }
+    }
+  }
+  return {
+    generatedAt: new Date().toISOString(),
+    sourceOrganization: organization,
+    repositories,
+    audits,
+    summary: summarize(audits),
+  };
+}
 
 export async function planMirrors({
   organization,
@@ -12,8 +88,7 @@ export async function planMirrors({
 }) {
   const repositories = (await discoverRepositories()).filter((repository) => matches(repository.name, repositoryFilter));
   const selectedPlatforms = platforms.filter((platform) => matches(platform.id, platformFilter));
-  if (repositories.length === 0) throw new Error(`repository filter matched nothing: ${repositoryFilter}`);
-  if (selectedPlatforms.length === 0) throw new Error(`platform filter matched nothing: ${platformFilter}`);
+  assertSelection(repositories, selectedPlatforms, repositoryFilter, platformFilter);
 
   const plans = [];
   for (const platform of selectedPlatforms) {
@@ -78,8 +153,7 @@ export async function synchronizeMirrors({
 }) {
   const repositories = (await discoverRepositories()).filter((repository) => matches(repository.name, repositoryFilter));
   const selectedPlatforms = platforms.filter((platform) => matches(platform.id, platformFilter));
-  if (repositories.length === 0) throw new Error(`repository filter matched nothing: ${repositoryFilter}`);
-  if (selectedPlatforms.length === 0) throw new Error(`platform filter matched nothing: ${platformFilter}`);
+  assertSelection(repositories, selectedPlatforms, repositoryFilter, platformFilter);
 
   const plans = [];
   for (const platform of selectedPlatforms) {
@@ -149,4 +223,9 @@ function summarize(plans) {
 
 function matches(value, filter) {
   return filter === "all" || value === filter;
+}
+
+function assertSelection(repositories, platforms, repositoryFilter, platformFilter) {
+  if (repositories.length === 0) throw new Error(`repository filter matched nothing: ${repositoryFilter}`);
+  if (platforms.length === 0) throw new Error(`platform filter matched nothing: ${platformFilter}`);
 }
