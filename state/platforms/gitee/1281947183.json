@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "githubId": 1281947183,
+  "repository": "yeelight-smart-home-skills",
+  "platform": "gitee",
+  "refs": {
+    "refs/heads/main": "37f6aec7da1500c266a35ec339268c9f404a70cb",
+    "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.0": "5c805f8e7243289b8e3c97ec793340c7151cb4b2",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.0": "3bd3778a61cc8edf5c9f433de84b2e39f4ca062e",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.1": "8e3422179d5bc41f1e18c32c5e391eba1be46276",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.10": "d0c79a6cbd54c5470466c32c1131e27504bf392d",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.11": "e15d84fa380ad3e7276663c1911bf994954a7388",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.12": "5c805f8e7243289b8e3c97ec793340c7151cb4b2",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.13": "7dfd155d299ade16069fff3e76dfcc614bee6e2b",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.2": "1c93825bc9fc7fc15b1700d76c478a1cf9c6789c",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.3": "106010e73b2d29b871f2ee7cfe972537b93457f5",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.4": "06d07414b8d0f953088c79f8803ce5ac9beb1768",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.5": "d8204bc5e3d219bc1a97b0e9492be1e1d63a0d05",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.6": "9d346d23f9e177329d7d847bb0e163e3d5885ea6",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.7": "19f0d4a4f781f5e6cf47b6f8b5e3fa55dd144dd9",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.8": "e7c3c12ab1f38b8a778cc5db4eaeb4c9e95f73ab",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.9": "86ad82f78a026d6428366a396bced116a4bec094"
+  },
+  "managedAssets": {
+    "yeelight-skill-yeelight-smart-home-v0.1.13/yeelight-smart-home-release-v0.1.13.tar.gz": {
+      "size": 616092,
+      "sha256": "38be1521b8fd0063c789ff47194a29dc947478731ea647453da40c5cd4287bd8",
+      "synchronizedAt": "2026-07-16T06:09:42.521Z"
+    }
+  },
+  "synchronizedAt": "2026-07-16T06:09:42.521Z"
+}

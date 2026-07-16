@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "githubId": 1258187958,
   "repository": "ha_yeelight_pro",
-  "platform": "gitcode",
+  "platform": "gitee",
   "refs": {
     "refs/heads/main": "b9a6a60e7586078dad5973e99d9d2dc1bc610c47",
     "refs/tags/v1.0.0": "0eca3e2c318f43b37e26aab8d0f93f7b68255a16",
@@ -16,8 +16,8 @@
     "v1.0.5/yeelight_pro.zip": {
       "size": 798245,
       "sha256": "99364af602e3fb7de3441431cd0c2608d84b5b27b477b99116736e655fe27a33",
-      "synchronizedAt": "2026-07-16T05:13:38.181Z"
+      "synchronizedAt": "2026-07-16T06:02:32.664Z"
     }
   },
-  "synchronizedAt": "2026-07-16T06:01:18.863Z"
+  "synchronizedAt": "2026-07-16T06:02:32.664Z"
 }

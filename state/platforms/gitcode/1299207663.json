@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "githubId": 1299207663,
   "repository": "yeelight-metadata-mcp",
-  "platform": "gitee",
+  "platform": "gitcode",
   "refs": {
     "refs/heads/main": "eaeb1e99ecfbcc27b73249dabf17be1347c79c49"
   },
   "managedAssets": {},
-  "synchronizedAt": "2026-07-16T06:08:39.004Z"
+  "synchronizedAt": "2026-07-16T06:12:14.501Z"
 }
