@@ -138,3 +138,40 @@ jobs:
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "chore(state): update mirror state"
           git push origin HEAD:mirror-state
+
+  converge-control-state:
+    if: always() && needs.publish-state.result == 'success'
+    needs: publish-state
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: gitee
+            secret: GITEE_TOKEN
+            username: GITEE_USERNAME
+          - platform: gitcode
+            secret: GITCODE_TOKEN
+            username: GITCODE_USERNAME
+          - platform: gitlab-com
+            secret: GITLAB_COM_TOKEN
+            username: UNUSED_GITLAB_USERNAME
+    env:
+      SELECTED_PLATFORM: ${{ github.event_name == 'schedule' && 'all' || inputs.platform }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      MIRROR_TOKEN: ${{ secrets[matrix.secret] }}
+      MIRROR_USERNAME: ${{ vars[matrix.username] }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Converge control repository after state publication
+        if: env.SELECTED_PLATFORM == 'all' || env.SELECTED_PLATFORM == matrix.platform
+        run: |
+          node src/cli.mjs sync \
+            --platform "${{ matrix.platform }}" \
+            --repository china-mirror-sync \
+            --state-dir .discarded-state > final-report.json
+          jq -r '.summary | to_entries[] | "\(.key): \(.value)"' final-report.json >> "$GITHUB_STEP_SUMMARY"
