@@ -45,7 +45,12 @@ export async function auditMirrors({
           assets: await adapter.listReleaseAssets(source, release),
         })));
         const selectedTags = selectAssetTags(sourceReleases);
-        const projection = applyReleaseAssetLimit(sourceReleases, selectedTags, adapter.releaseAssetLimit);
+        const projection = applyReleaseAssetLimit(
+          sourceReleases,
+          selectedTags,
+          adapter.releaseAssetLimit,
+          adapter.releaseAssetExclusions,
+        );
         const audit = auditRepository({
           source: {
             ...source,

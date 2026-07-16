@@ -56,7 +56,12 @@ export async function executeReleaseSync({
   fetchImpl = fetch,
   maxAssetBytes = 500 * 1024 * 1024,
 }) {
-  const projection = applyReleaseAssetLimit(sourceReleases, selectedTags, adapter.releaseAssetLimit);
+  const projection = applyReleaseAssetLimit(
+    sourceReleases,
+    selectedTags,
+    adapter.releaseAssetLimit,
+    adapter.releaseAssetExclusions,
+  );
   const listedReleases = await adapter.listReleases(sourceRepository);
   const targetReleases = await Promise.all(listedReleases.map(async (release) => ({
     ...release,

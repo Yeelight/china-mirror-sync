@@ -12,6 +12,7 @@ export function createGiteeLikeAdapter(config, options = {}) {
     id: config.id,
     releaseAssetConcurrency: config.adapter === "gitee" ? 1 : 4,
     releaseAssetLimit: config.adapter === "gitee" ? 20 : null,
+    releaseAssetExclusions: config.adapter === "gitee" ? ["yeelight-home-windows-arm64.zip"] : [],
     capabilities: () => ({
       metadata: "supported",
       wiki: "unsupported",

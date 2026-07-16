@@ -19,7 +19,7 @@ export function auditRepository({ source, target, previous, capabilities, select
       ? detail("unsupported")
       : auditReleaseAssets(source.releases || [], target.releases || [], selectedTags),
     releaseAssetPolicy: source.omittedAssetCount > 0
-      ? detail("unsupported", `${source.omittedAssetCount} source assets omitted by platform limit ${source.releaseAssetLimit}`)
+      ? detail("unsupported", `${source.omittedAssetCount} source assets omitted by platform policy`)
       : detail("aligned"),
   };
   return {

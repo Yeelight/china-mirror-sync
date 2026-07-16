@@ -38,6 +38,7 @@ for (const fixture of [
     assert.equal(repository.defaultBranch, "main");
     assert.equal(adapter.releaseAssetConcurrency, fixture.id === "gitee" ? 1 : 4);
     assert.equal(adapter.releaseAssetLimit, fixture.id === "gitee" ? 20 : null);
+    assert.deepEqual(adapter.releaseAssetExclusions, fixture.id === "gitee" ? ["yeelight-home-windows-arm64.zip"] : []);
     assert.equal(adapter.gitRemote({ name: "demo" }), `${fixture.config.webBaseUrl}/${fixture.config.namespace}/demo.git`);
     await adapter.updateRepositoryMetadata({
       name: "demo",

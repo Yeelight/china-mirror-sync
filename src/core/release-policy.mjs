@@ -14,18 +14,23 @@ export function selectReleaseAssets(releases, { assetSyncFrom }) {
   return selected;
 }
 
-export function applyReleaseAssetLimit(releases, selectedTags, limit) {
-  if (!Number.isInteger(limit) || limit <= 0) return { releases, omittedAssetCount: 0 };
+export function applyReleaseAssetLimit(releases, selectedTags, limit, excludedNames = []) {
+  const exclusions = new Set(excludedNames);
   let omittedAssetCount = 0;
   const projected = releases.map((release) => {
-    if (!selectedTags.has(release.tagName) || release.assets.length <= limit) return release;
-    const assets = release.assets
+    if (!selectedTags.has(release.tagName)) return release;
+    const allowed = release.assets.filter((asset) => !exclusions.has(asset.name));
+    omittedAssetCount += release.assets.length - allowed.length;
+    if (!Number.isInteger(limit) || limit <= 0 || allowed.length <= limit) {
+      return allowed.length === release.assets.length ? release : { ...release, assets: allowed };
+    }
+    const assets = allowed
       .map((asset, index) => ({ asset, index, rank: assetPriority(asset.name) }))
       .sort((left, right) => left.rank - right.rank || left.index - right.index)
       .slice(0, limit)
       .sort((left, right) => left.index - right.index)
       .map(({ asset }) => asset);
-    omittedAssetCount += release.assets.length - assets.length;
+    omittedAssetCount += allowed.length - assets.length;
     return { ...release, assets };
   });
   return { releases: projected, omittedAssetCount };

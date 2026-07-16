@@ -49,6 +49,26 @@ test("keeps a deterministic installable subset when a platform limits release as
   assert.ok(!selected.includes("linux-amd64.apk"));
 });
 
+test("omits assets rejected by a platform before applying its count limit", () => {
+  const source = [{
+    ...release("v1", "2026-07-20T00:00:00Z"),
+    assets: [
+      { name: "checksums.txt", size: 1 },
+      { name: "yeelight-home-windows-arm64.zip", size: 2 },
+      { name: "fallback.deb", size: 3 },
+    ],
+  }];
+  const result = applyReleaseAssetLimit(
+    source,
+    new Set(["v1"]),
+    2,
+    ["yeelight-home-windows-arm64.zip"],
+  );
+
+  assert.equal(result.omittedAssetCount, 1);
+  assert.deepEqual(result.releases[0].assets.map(({ name }) => name), ["checksums.txt", "fallback.deb"]);
+});
+
 function release(tagName, publishedAt, overrides = {}) {
   return {
     tagName,
