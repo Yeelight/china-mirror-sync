@@ -24,6 +24,11 @@ releases. Target repositories are read-only distribution mirrors.
 Objects without portable identity or semantics, including issues, pull
 requests, stars, Actions, packages and secrets, are explicitly not copied.
 
+Gitee currently limits each Release to 20 attachments. The synchronizer keeps a
+deterministic installable subset and reports omitted files as `unsupported`.
+Gitee's scanner also rejects the official `yeelight-home-windows-arm64.zip`;
+that verified asset remains available from GitHub, GitCode, and GitLab.com.
+
 ## Safety Model
 
 GitHub is authoritative: target-side drift is detected and force-converged with
