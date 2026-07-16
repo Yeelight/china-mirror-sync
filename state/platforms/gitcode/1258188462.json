@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "githubId": 1258188462,
+  "repository": "ha_yeelight_dashboard",
+  "platform": "gitcode",
+  "refs": {
+    "refs/heads/main": "7b76ea98e474c60be51fa65612b9238555fd3427",
+    "refs/tags/v0.1.0": "42c4f5be334e7812b552995a078b5aff6270f3e6",
+    "refs/tags/v0.1.1": "893de8b9f6962f645c87674f8495439e1e75ef70",
+    "refs/tags/v0.1.2": "0ac680b5aa5ed0de45363af2950846e3148df697",
+    "refs/tags/v0.1.3": "39e34c18e5120b0fb7a96cd68757c8d6f6b7637e"
+  },
+  "managedAssets": {
+    "v0.1.3/ha_yeelight_dashboard.js": {
+      "size": 400663,
+      "sha256": "bfdb7649058635b02b31017c7d27ecc6113d5174015b6c31a0d55f33c76aec3b",
+      "synchronizedAt": "2026-07-16T05:02:16.709Z"
+    }
+  },
+  "synchronizedAt": "2026-07-16T05:02:16.710Z"
+}
