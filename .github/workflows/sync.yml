@@ -71,7 +71,7 @@ jobs:
         shell: bash
         run: |
           mkdir -p .mirror-state
-          if git fetch origin mirror-state; then
+          if git fetch origin mirror-state && git cat-file -e "origin/mirror-state:state/platforms/${{ matrix.platform }}"; then
             git archive origin/mirror-state "state/platforms/${{ matrix.platform }}" | tar -x -C .mirror-state
           fi
       - name: Run mirror
