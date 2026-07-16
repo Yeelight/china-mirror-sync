@@ -144,6 +144,34 @@ test("uploads release assets with bounded parallelism", async () => {
   assert.ok(peak <= 4, `parallel upload limit exceeded: ${peak}`);
 });
 
+test("deletes target-only assets before uploading replacements for capped platforms", async () => {
+  const calls = [];
+  const source = [release("v2", [{
+    name: "wanted.zip",
+    size: 3,
+    downloadUrl: "https://example.com/wanted.zip",
+  }])];
+  const adapter = {
+    releaseAssetConcurrency: 1,
+    listReleases: async () => [release("v2", [])],
+    listReleaseAssets: async () => [{ id: 9, name: "extra.zip", size: 3 }],
+    createOrUpdateRelease: async () => { throw new Error("metadata is already aligned"); },
+    deleteManagedReleaseAsset: async () => calls.push("delete:extra.zip"),
+    uploadReleaseAsset: async () => calls.push("upload:wanted.zip"),
+  };
+
+  await executeReleaseSync({
+    sourceRepository: { name: "demo" },
+    sourceReleases: source,
+    selectedTags: new Set(["v2"]),
+    managedAssets: {},
+    adapter,
+    fetchImpl: async () => new Response("abc", { status: 200 }),
+  });
+
+  assert.deepEqual(calls, ["delete:extra.zip", "upload:wanted.zip"]);
+});
+
 function release(tagName, assets) {
   return {
     tagName,

@@ -37,6 +37,7 @@ for (const fixture of [
     assert.equal(requests[0].options.headers[fixture.authHeader[0]], fixture.authHeader[1]);
     assert.equal(repository.defaultBranch, "main");
     assert.equal(adapter.releaseAssetConcurrency, fixture.id === "gitee" ? 1 : 4);
+    assert.equal(adapter.releaseAssetLimit, fixture.id === "gitee" ? 20 : null);
     assert.equal(adapter.gitRemote({ name: "demo" }), `${fixture.config.webBaseUrl}/${fixture.config.namespace}/demo.git`);
     await adapter.updateRepositoryMetadata({
       name: "demo",

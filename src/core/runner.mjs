@@ -1,5 +1,6 @@
 import { planRepositorySync } from "./planner.mjs";
 import { auditRepository } from "./audit.mjs";
+import { applyReleaseAssetLimit } from "./release-policy.mjs";
 
 export async function auditMirrors({
   organization,
@@ -43,12 +44,20 @@ export async function auditMirrors({
           ...release,
           assets: await adapter.listReleaseAssets(source, release),
         })));
+        const selectedTags = selectAssetTags(sourceReleases);
+        const projection = applyReleaseAssetLimit(sourceReleases, selectedTags, adapter.releaseAssetLimit);
         const audit = auditRepository({
-          source: { ...source, refs: sourceRefs, releases: sourceReleases },
+          source: {
+            ...source,
+            refs: sourceRefs,
+            releases: projection.releases,
+            omittedAssetCount: projection.omittedAssetCount,
+            releaseAssetLimit: adapter.releaseAssetLimit,
+          },
           target: { ...target, refs: targetRefs, releases: targetReleases },
           previous,
           capabilities: adapter.capabilities(),
-          selectedTags: selectAssetTags(sourceReleases),
+          selectedTags,
         });
         audits.push({
           platform: platform.id,
@@ -193,6 +202,7 @@ export async function synchronizeMirrors({
           githubId: source.githubId,
           status: result.status,
           changes: result.changes.length,
+          releaseAssetsOmitted: releaseResult.omittedAssetCount || 0,
         });
       } catch (error) {
         plans.push({

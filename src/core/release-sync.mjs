@@ -1,6 +1,7 @@
 import { createHash } from "node:crypto";
 
 import { releaseBodiesEquivalent } from "./release-metadata.mjs";
+import { applyReleaseAssetLimit } from "./release-policy.mjs";
 
 export function planReleaseSync({ sourceReleases, targetReleases, selectedTags, managedAssets }) {
   const targets = new Map(targetReleases.map((release) => [release.tagName, release]));
@@ -55,12 +56,18 @@ export async function executeReleaseSync({
   fetchImpl = fetch,
   maxAssetBytes = 500 * 1024 * 1024,
 }) {
+  const projection = applyReleaseAssetLimit(sourceReleases, selectedTags, adapter.releaseAssetLimit);
   const listedReleases = await adapter.listReleases(sourceRepository);
   const targetReleases = await Promise.all(listedReleases.map(async (release) => ({
     ...release,
     assets: await adapter.listReleaseAssets(sourceRepository, release),
   })));
-  const plan = planReleaseSync({ sourceReleases, targetReleases, selectedTags, managedAssets });
+  const plan = planReleaseSync({
+    sourceReleases: projection.releases,
+    targetReleases,
+    selectedTags,
+    managedAssets,
+  });
   const releasesByTag = new Map(targetReleases.map((release) => [release.tagName, release]));
 
   for (const item of plan.releases) {
@@ -75,7 +82,8 @@ export async function executeReleaseSync({
   }
 
   const nextManagedAssets = { ...managedAssets };
-  await forEachConcurrent(plan.assets, adapter.releaseAssetConcurrency || 4, async (item) => {
+  const assetConcurrency = adapter.releaseAssetConcurrency || 4;
+  const processAsset = async (item) => {
     const release = releasesByTag.get(item.tagName);
     if (!release) throw new Error(`target release is missing after metadata sync: ${item.tagName}`);
     if (item.action === "delete") {
@@ -93,7 +101,9 @@ export async function executeReleaseSync({
       sha256: verified.sha256,
       synchronizedAt: new Date().toISOString(),
     };
-  });
+  };
+  await forEachConcurrent(plan.assets.filter((item) => item.action === "delete"), assetConcurrency, processAsset);
+  await forEachConcurrent(plan.assets.filter((item) => item.action !== "delete"), assetConcurrency, processAsset);
   for (const item of plan.releases) {
     if (item.action !== "delete") continue;
     for (const key of Object.keys(nextManagedAssets)) {
@@ -101,7 +111,7 @@ export async function executeReleaseSync({
     }
   }
 
-  return { plan, managedAssets: nextManagedAssets };
+  return { plan, managedAssets: nextManagedAssets, omittedAssetCount: projection.omittedAssetCount };
 }
 
 async function forEachConcurrent(items, limit, worker) {

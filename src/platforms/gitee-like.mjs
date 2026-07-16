@@ -11,6 +11,7 @@ export function createGiteeLikeAdapter(config, options = {}) {
   return {
     id: config.id,
     releaseAssetConcurrency: config.adapter === "gitee" ? 1 : 4,
+    releaseAssetLimit: config.adapter === "gitee" ? 20 : null,
     capabilities: () => ({
       metadata: "supported",
       wiki: "unsupported",

@@ -18,6 +18,9 @@ export function auditRepository({ source, target, previous, capabilities, select
     releaseAssets: capabilities.releases === "unsupported"
       ? detail("unsupported")
       : auditReleaseAssets(source.releases || [], target.releases || [], selectedTags),
+    releaseAssetPolicy: source.omittedAssetCount > 0
+      ? detail("unsupported", `${source.omittedAssetCount} source assets omitted by platform limit ${source.releaseAssetLimit}`)
+      : detail("aligned"),
   };
   return {
     status: Object.values(dimensions).map((item) => item.status).sort(bySeverity).at(-1),
