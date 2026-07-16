@@ -4,9 +4,9 @@
   "repository": "china-mirror-sync",
   "platform": "gitcode",
   "refs": {
-    "refs/heads/main": "cf6128428ef36c898b226b60ae36db138858c51a",
-    "refs/heads/mirror-state": "67d29515913a68377172fc91505f33b40fa3d291"
+    "refs/heads/main": "57d8249dd30e1df3f0ea1407eda8cad5198510b0",
+    "refs/heads/mirror-state": "f93ed21c6b2f1539baa86bdf078188d65672726e"
   },
   "managedAssets": {},
-  "synchronizedAt": "2026-07-16T06:00:57.114Z"
+  "synchronizedAt": "2026-07-16T07:33:10.802Z"
 }
