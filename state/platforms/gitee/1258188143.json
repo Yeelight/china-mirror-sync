@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "githubId": 1258188143,
+  "repository": "ha_yeelight_themes",
+  "platform": "gitee",
+  "refs": {
+    "refs/heads/main": "cfe21f800c60bd765659e906431a01dc3de701f8",
+    "refs/tags/v1.0.0": "c3a7c5e6c8d28c98604b9f45651bc438d97626a7",
+    "refs/tags/v1.0.1": "94c4328bc095e00f3992cb1f6fc7845b613ed4ab",
+    "refs/tags/v1.0.2": "546cb6eb77597ab60414c029438daa8780a718cc"
+  },
+  "managedAssets": {},
+  "synchronizedAt": "2026-07-16T05:15:05.388Z"
+}

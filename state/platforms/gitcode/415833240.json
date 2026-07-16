@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "githubId": 415833240,
+  "repository": "flutter_blue",
+  "platform": "gitcode",
+  "refs": {
+    "refs/heads/api-refactoring": "65ed7a18a7690c431c2503e0669df10d1b08d292",
+    "refs/heads/connect-disconnect": "be4578ebc93de2ac5462dec255091288771857c3",
+    "refs/heads/feature_ble_write_lhb": "3fa95791ef485fe1df66d010dccca0e119260cfd",
+    "refs/heads/master": "7c7a86c95a3a2537bfb7e3c368716cdb26cf66b0",
+    "refs/heads/reactivex": "55a13d2944fb155540a3aee2de1e59cc1e07a586",
+    "refs/heads/update-project-files-ios-fix": "d5b754bc1bbff08a0d3e6dc3546b10fe341b8eb0",
+    "refs/tags/v0.7.0": "47aee02da468ddf9ee681723f8d98c5871477439",
+    "refs/tags/v0.7.1": "04f55964619b6b741229001d52e443762d205f72",
+    "refs/tags/v0.7.1+1": "69db6dc902bd525baab01af7ab3a85b330f8afa0",
+    "refs/tags/v0.7.2": "63a10025a00c670f696a9b9ca7b42258f68d1626",
+    "refs/tags/v0.7.3": "c19bb9aadde250970353d22b3cd100db8bde28ff",
+    "refs/tags/v0.8.0": "e02ec026ebce1f9dc290750835941c28dce6b209"
+  },
+  "managedAssets": {},
+  "synchronizedAt": "2026-07-16T05:12:34.447Z"
+}

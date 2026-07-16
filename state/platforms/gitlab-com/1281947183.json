@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "githubId": 1281947183,
+  "repository": "yeelight-smart-home-skills",
+  "platform": "gitlab-com",
+  "refs": {
+    "refs/heads/main": "d4330160b6aa9a346cdf2ae145134e541e3d9ae2",
+    "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.0": "5c805f8e7243289b8e3c97ec793340c7151cb4b2",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.0": "3bd3778a61cc8edf5c9f433de84b2e39f4ca062e",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.1": "8e3422179d5bc41f1e18c32c5e391eba1be46276",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.10": "d0c79a6cbd54c5470466c32c1131e27504bf392d",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.11": "e15d84fa380ad3e7276663c1911bf994954a7388",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.12": "5c805f8e7243289b8e3c97ec793340c7151cb4b2",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.13": "7dfd155d299ade16069fff3e76dfcc614bee6e2b",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.2": "1c93825bc9fc7fc15b1700d76c478a1cf9c6789c",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.3": "106010e73b2d29b871f2ee7cfe972537b93457f5",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.4": "06d07414b8d0f953088c79f8803ce5ac9beb1768",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.5": "d8204bc5e3d219bc1a97b0e9492be1e1d63a0d05",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.6": "9d346d23f9e177329d7d847bb0e163e3d5885ea6",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.7": "19f0d4a4f781f5e6cf47b6f8b5e3fa55dd144dd9",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.8": "e7c3c12ab1f38b8a778cc5db4eaeb4c9e95f73ab",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.9": "86ad82f78a026d6428366a396bced116a4bec094"
+  },
+  "managedAssets": {
+    "yeelight-skill-yeelight-smart-home-v0.1.13/channel-matrix.json": {
+      "size": 2021,
+      "sha256": "4ee4ad1aeb8ee41cbfc1f9208098f45d3ce6a2132ef0e5b38349952f54817ff8",
+      "synchronizedAt": "2026-07-16T05:13:32.377Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.13/checksums.txt": {
+      "size": 810,
+      "sha256": "f38bf01881c0fe1ecce50ec0a3e3c5eb30aebdcce52f79627c964b6d847f254a",
+      "synchronizedAt": "2026-07-16T05:13:33.405Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.13/release-manifest.json": {
+      "size": 1635,
+      "sha256": "c9e6c994bd0d881501e92d7ff69df4b19ebcf54285f8f6d70b4de059d68c0332",
+      "synchronizedAt": "2026-07-16T05:13:34.612Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.13/release-notes.md": {
+      "size": 320,
+      "sha256": "5072ab3b64cd553f576e2d8c790b68a51cc5bcebf61615012c3092e544331b2b",
+      "synchronizedAt": "2026-07-16T05:13:35.604Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.13/yeelight-smart-home-agent-skill-v0.1.13.zip": {
+      "size": 160934,
+      "sha256": "b6eef23c16b71a8373c73cc431690c19e05c4c0b4dbf3534d3e858038f16d165",
+      "synchronizedAt": "2026-07-16T05:13:36.699Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.13/yeelight-smart-home-claude-skill-v0.1.13.zip": {
+      "size": 161439,
+      "sha256": "f462fed929a9c7de0aac2d687ce1d13e49b8a0f966859b7165ecd3d1e5b655ae",
+      "synchronizedAt": "2026-07-16T05:13:37.786Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.13/yeelight-smart-home-codex-plugin-v0.1.13.zip": {
+      "size": 162726,
+      "sha256": "27906d3a91dd2f970827dfc9238149137d87dc064af2d70af37be5abc6334fcf",
+      "synchronizedAt": "2026-07-16T05:13:38.911Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.13/yeelight-smart-home-copilot-skill-v0.1.13.zip": {
+      "size": 161449,
+      "sha256": "d37b657928461f7d9971044f60f5fc40bb7f3693be5a93dd80a58c2d287f68e0",
+      "synchronizedAt": "2026-07-16T05:13:40.007Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.13/yeelight-smart-home-release-v0.1.13.tar.gz": {
+      "size": 616092,
+      "sha256": "38be1521b8fd0063c789ff47194a29dc947478731ea647453da40c5cd4287bd8",
+      "synchronizedAt": "2026-07-16T05:13:41.388Z"
+    }
+  },
+  "synchronizedAt": "2026-07-16T05:13:41.388Z"
+}

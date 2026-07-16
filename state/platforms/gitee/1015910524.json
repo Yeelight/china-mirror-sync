@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "githubId": 1015910524,
+  "repository": "yeelight-iot-mcp",
+  "platform": "gitee",
+  "refs": {
+    "refs/heads/master": "3b39c44655d8b1795ec97254bc585496784ac5d8"
+  },
+  "managedAssets": {},
+  "synchronizedAt": "2026-07-16T05:18:03.610Z"
+}

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "githubId": 931974322,
+  "repository": "ai_control_yeelight_pro",
+  "platform": "gitlab-com",
+  "refs": {
+    "refs/heads/develop": "b10e7db037e9b0e6a7e8dbb66a1ec5f35eba72cc",
+    "refs/heads/docker_version": "25835cd87d48b5b3b970c8b9066043ae34e1bd86",
+    "refs/heads/main_bak": "700e052b880c2aa65bee49b6385b27ede20424a9",
+    "refs/tags/v0.0.1": "deec708d62bad054d30aa03ce57c13c9a74da8da",
+    "refs/tags/v0.0.2": "b10e7db037e9b0e6a7e8dbb66a1ec5f35eba72cc"
+  },
+  "managedAssets": {},
+  "synchronizedAt": "2026-07-16T05:12:20.647Z"
+}

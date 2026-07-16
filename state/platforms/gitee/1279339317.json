@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "githubId": 1279339317,
+  "repository": "homebrew-tap",
+  "platform": "gitee",
+  "refs": {
+    "refs/heads/main": "c907f0748ea319bb4dcc7581a4c8a9689aa01052"
+  },
+  "managedAssets": {},
+  "synchronizedAt": "2026-07-16T05:15:09.607Z"
+}
