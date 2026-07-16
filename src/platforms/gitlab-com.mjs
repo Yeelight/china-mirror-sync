@@ -7,6 +7,7 @@ export function createGitLabComAdapter(config, { token, fetchImpl = fetch } = {}
   const context = { config, token, fetchImpl };
   return {
     id: config.id,
+    releaseAssetConcurrency: 4,
     capabilities: () => ({
       metadata: "supported",
       wiki: "unsupported",

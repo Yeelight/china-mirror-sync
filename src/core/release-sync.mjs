@@ -75,7 +75,7 @@ export async function executeReleaseSync({
   }
 
   const nextManagedAssets = { ...managedAssets };
-  await forEachConcurrent(plan.assets, 4, async (item) => {
+  await forEachConcurrent(plan.assets, adapter.releaseAssetConcurrency || 4, async (item) => {
     const release = releasesByTag.get(item.tagName);
     if (!release) throw new Error(`target release is missing after metadata sync: ${item.tagName}`);
     if (item.action === "delete") {
