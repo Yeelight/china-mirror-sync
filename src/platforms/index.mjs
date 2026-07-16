@@ -1,4 +1,5 @@
 import { createGiteeLikeAdapter } from "./gitee-like.mjs";
+import { createGitCodeAdapter } from "./gitcode.mjs";
 import { createGitLabComAdapter } from "./gitlab-com.mjs";
 
 export function createPlatformAdapter(config, options = {}) {
@@ -6,7 +7,7 @@ export function createPlatformAdapter(config, options = {}) {
     case "gitee":
       return createGiteeLikeAdapter(config, { ...options, authHeader: "authorization", authPrefix: "token " });
     case "gitcode":
-      return createGiteeLikeAdapter(config, { ...options, authHeader: "private-token", authPrefix: "" });
+      return createGitCodeAdapter(config, options);
     case "gitlab-com":
       return createGitLabComAdapter(config, options);
     default:

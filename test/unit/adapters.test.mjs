@@ -72,6 +72,53 @@ test("GitLab.com adapter encodes the namespace path and uses project uploads for
   assert.equal(adapter.capabilities().releaseAssetDigest, "unsupported");
 });
 
+test("GitCode uploads release assets through a signed URL and ignores source archives", async () => {
+  const requests = [];
+  const config = platform("gitcode", "https://gitcode.example/api/v5", "https://gitcode.example", "Yeelight");
+  const adapter = createPlatformAdapter(config, {
+    token: "secret",
+    fetchImpl: async (url, options = {}) => {
+      requests.push({ url: String(url), options });
+      if (String(url).includes("upload_url")) {
+        return Response.json({
+          url: "https://files.example/upload?signature=signed",
+          headers: { "x-storage-callback": "opaque", "content-type": "application/octet-stream" },
+        });
+      }
+      if (String(url).startsWith("https://files.example/")) {
+        return Response.json({ id: "attachment-1", name: "app.zip", size: 3 });
+      }
+      if (String(url).includes("/releases?")) {
+        return Response.json([{
+          tag_name: "v1",
+          name: "v1",
+          body: "notes",
+          assets: [
+            { type: "source", name: "v1.zip" },
+            { type: "attachment", id: "attachment-1", name: "app.zip", size: 3 },
+          ],
+        }]);
+      }
+      return Response.json([]);
+    },
+  });
+
+  const uploaded = await adapter.uploadReleaseAsset(
+    { name: "demo" },
+    { id: "v1", tagName: "v1" },
+    { name: "app.zip", size: 3, blob: new Blob(["abc"]) },
+  );
+
+  assert.equal(requests[0].url, "https://gitcode.example/api/v5/repos/Yeelight/demo/releases/v1/upload_url?file_name=app.zip");
+  assert.equal(requests[0].options.headers["private-token"], "secret");
+  assert.equal(requests[1].options.method, "PUT");
+  assert.equal(requests[1].options.headers["x-storage-callback"], "opaque");
+  assert.equal(uploaded.id, "attachment-1");
+  const releases = await adapter.listReleases({ name: "demo" });
+  assert.equal(releases[0].id, "v1");
+  assert.deepEqual(releases[0].assets.map((asset) => asset.name), ["app.zip"]);
+});
+
 test("adapters reject unsafe repository names before issuing HTTP requests", async () => {
   let called = false;
   const adapter = createPlatformAdapter(platform("gitee", "https://gitee.example/api/v5", "https://gitee.example", "yeelight"), {

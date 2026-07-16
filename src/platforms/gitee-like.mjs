@@ -3,8 +3,8 @@ import { HttpError, requestJson } from "../core/http.mjs";
 const SAFE_NAME = /^[A-Za-z0-9._-]+$/;
 
 export function createGiteeLikeAdapter(config, options = {}) {
-  const { token, fetchImpl = fetch, authHeader, authPrefix } = options;
-  const context = { config, token, fetchImpl, authHeader, authPrefix };
+  const { token, fetchImpl = fetch, authHeader, authPrefix, releaseNormalizer = normalizeRelease } = options;
+  const context = { config, token, fetchImpl, authHeader, authPrefix, releaseNormalizer };
   validateConfig(config);
 
   return {
@@ -76,7 +76,7 @@ async function updateRepositoryMetadata(context, source) {
 
 async function listReleases(context, source) {
   const items = await api(context, `/repos/${context.config.namespace}/${safeName(source.name)}/releases?per_page=100`);
-  return (items || []).map(normalizeRelease);
+  return (items || []).map(context.releaseNormalizer);
 }
 
 async function upsertRelease(context, source, release, targetRelease) {
@@ -93,7 +93,7 @@ async function upsertRelease(context, source, release, targetRelease) {
       target_commitish: release.targetCommitish,
     }),
   });
-  return normalizeRelease(item);
+  return context.releaseNormalizer(item);
 }
 
 async function listReleaseAssets(context, source, release) {
