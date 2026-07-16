@@ -37,6 +37,14 @@ for (const fixture of [
     assert.equal(requests[0].options.headers[fixture.authHeader[0]], fixture.authHeader[1]);
     assert.equal(repository.defaultBranch, "main");
     assert.equal(adapter.gitRemote({ name: "demo" }), `${fixture.config.webBaseUrl}/${fixture.config.namespace}/demo.git`);
+    await adapter.updateRepositoryMetadata({
+      name: "demo",
+      description: "Description",
+      homepage: "https://example.com",
+      defaultBranch: "main",
+      hasWiki: true,
+    }, repository);
+    assert.equal(JSON.parse(requests[1].options.body).name, "demo");
   });
 }
 

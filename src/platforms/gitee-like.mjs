@@ -63,6 +63,7 @@ async function updateRepositoryMetadata(context, source) {
   const item = await api(context, `/repos/${context.config.namespace}/${safeName(source.name)}`, {
     method: "PATCH",
     body: JSON.stringify({
+      name: safeName(source.name),
       description: source.description || "",
       homepage: source.homepage || "",
       has_issues: false,
