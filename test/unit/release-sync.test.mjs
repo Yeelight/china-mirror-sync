@@ -107,6 +107,43 @@ test("executes metadata and verified asset uploads idempotently", async () => {
   assert.equal(result.managedAssets["v2/app.zip"].size, 3);
 });
 
+test("uploads release assets with bounded parallelism", async () => {
+  let active = 0;
+  let peak = 0;
+  const assets = Array.from({ length: 8 }, (_, index) => ({
+    id: index,
+    name: `asset-${index}.zip`,
+    size: 3,
+    downloadUrl: `https://example.com/asset-${index}.zip`,
+  }));
+  const source = [release("v2", assets)];
+  const adapter = {
+    listReleases: async () => [release("v2", [])],
+    listReleaseAssets: async () => [],
+    createOrUpdateRelease: async () => { throw new Error("metadata is already aligned"); },
+    uploadReleaseAsset: async () => {
+      active += 1;
+      peak = Math.max(peak, active);
+      await new Promise((resolve) => setTimeout(resolve, 5));
+      active -= 1;
+    },
+    deleteManagedReleaseAsset: async () => {},
+  };
+
+  const result = await executeReleaseSync({
+    sourceRepository: { name: "demo" },
+    sourceReleases: source,
+    selectedTags: new Set(["v2"]),
+    managedAssets: {},
+    adapter,
+    fetchImpl: async () => new Response("abc", { status: 200 }),
+  });
+
+  assert.equal(Object.keys(result.managedAssets).length, 8);
+  assert.ok(peak > 1, `expected parallel uploads, observed ${peak}`);
+  assert.ok(peak <= 4, `parallel upload limit exceeded: ${peak}`);
+});
+
 function release(tagName, assets) {
   return {
     tagName,

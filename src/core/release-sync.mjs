@@ -75,13 +75,13 @@ export async function executeReleaseSync({
   }
 
   const nextManagedAssets = { ...managedAssets };
-  for (const item of plan.assets) {
+  await forEachConcurrent(plan.assets, 4, async (item) => {
     const release = releasesByTag.get(item.tagName);
     if (!release) throw new Error(`target release is missing after metadata sync: ${item.tagName}`);
     if (item.action === "delete") {
       await adapter.deleteManagedReleaseAsset(sourceRepository, release, item.targetAsset);
       delete nextManagedAssets[`${item.tagName}/${item.targetAsset.name}`];
-      continue;
+      return;
     }
     const verified = await downloadVerifiedAsset(item.asset, { githubToken, fetchImpl, maxAssetBytes });
     if (item.action === "replace") {
@@ -93,7 +93,7 @@ export async function executeReleaseSync({
       sha256: verified.sha256,
       synchronizedAt: new Date().toISOString(),
     };
-  }
+  });
   for (const item of plan.releases) {
     if (item.action !== "delete") continue;
     for (const key of Object.keys(nextManagedAssets)) {
@@ -102,6 +102,18 @@ export async function executeReleaseSync({
   }
 
   return { plan, managedAssets: nextManagedAssets };
+}
+
+async function forEachConcurrent(items, limit, worker) {
+  let cursor = 0;
+  async function run() {
+    while (cursor < items.length) {
+      const index = cursor;
+      cursor += 1;
+      await worker(items[index]);
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, run));
 }
 
 async function downloadVerifiedAsset(asset, { githubToken, fetchImpl, maxAssetBytes }) {
