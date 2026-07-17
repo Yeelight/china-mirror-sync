@@ -4,8 +4,10 @@
   "repository": "yeelight-smart-home-skills",
   "platform": "gitcode",
   "refs": {
-    "refs/heads/main": "37f6aec7da1500c266a35ec339268c9f404a70cb",
+    "refs/heads/main": "f4792a6754bb2385c5a8d85fb70ae19175c01d2c",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.0": "5c805f8e7243289b8e3c97ec793340c7151cb4b2",
+    "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.1": "de2a9ad91409b2ad41acd3feabea1babc159cc89",
+    "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.2": "f7b380d58c4602bfedc09a1b9ad588baa7574d63",
     "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.0": "3bd3778a61cc8edf5c9f433de84b2e39f4ca062e",
     "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.1": "8e3422179d5bc41f1e18c32c5e391eba1be46276",
     "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.10": "d0c79a6cbd54c5470466c32c1131e27504bf392d",
@@ -66,7 +68,97 @@
       "size": 616092,
       "sha256": "38be1521b8fd0063c789ff47194a29dc947478731ea647453da40c5cd4287bd8",
       "synchronizedAt": "2026-07-16T06:13:28.803Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.2/checksums.txt": {
+      "size": 830,
+      "sha256": "2d9b301b88358965bbeb4ea0240f093aba62601ee1041b08b39124953762c487",
+      "synchronizedAt": "2026-07-17T02:47:52.928Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.2/release-notes.md": {
+      "size": 324,
+      "sha256": "f19d5709e52ada9a0d45ad0252898ec4bad90ec68a031d4fcaedef5c1d8334b5",
+      "synchronizedAt": "2026-07-17T02:47:52.944Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.2/channel-matrix.json": {
+      "size": 1872,
+      "sha256": "e26540937c30efbbc3a431bef551696786f344f244e35f7cb4d25fb870039f9b",
+      "synchronizedAt": "2026-07-17T02:47:53.358Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.2/release-manifest.json": {
+      "size": 1660,
+      "sha256": "43468305cc6dbe9eaf8b8ce554193dd9cf108f67f513f148fa094bcd0b419f37",
+      "synchronizedAt": "2026-07-17T02:47:53.505Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.2/yeelight-pro-app-builder-claude-skill-v0.1.2.zip": {
+      "size": 817592,
+      "sha256": "97932553a73b81038046b9fce182ca4819d28bc5b9d4ef4f10e649d53916ab0f",
+      "synchronizedAt": "2026-07-17T02:47:55.636Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.2/yeelight-pro-app-builder-agent-skill-v0.1.2.zip": {
+      "size": 817085,
+      "sha256": "2b9f609418bf72019bc029f372370fee7744bd8720e000a0668dc5cfb1bb622e",
+      "synchronizedAt": "2026-07-17T02:48:05.226Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.2/yeelight-pro-app-builder-copilot-skill-v0.1.2.zip": {
+      "size": 817608,
+      "sha256": "d5ed30c707700e10c62046d968463bc4e75569326f65882ea29186a81e19ddbd",
+      "synchronizedAt": "2026-07-17T02:48:05.390Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.1/checksums.txt": {
+      "size": 830,
+      "sha256": "ea3468c7cf0e3d14cfa56c5ac7b1afde63d9a61bcf1da30d40a1b9dc6b51b5a0",
+      "synchronizedAt": "2026-07-17T02:48:07.570Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.1/channel-matrix.json": {
+      "size": 1872,
+      "sha256": "d82238fb5bd156d7db38a73706dafb267793a957ef8fdc4cbbc4736e3a2531e4",
+      "synchronizedAt": "2026-07-17T02:48:07.582Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.2/yeelight-pro-app-builder-codex-plugin-v0.1.2.zip": {
+      "size": 823457,
+      "sha256": "77cae5430783d593ccc1f849b24bb437a636d20cc45a9802b5db9b559cf919e2",
+      "synchronizedAt": "2026-07-17T02:48:08.482Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.1/release-notes.md": {
+      "size": 324,
+      "sha256": "b1d7303cd3da95e9f741e25287f4016c332ad50fc8e49ad538c7a3d047bfcb01",
+      "synchronizedAt": "2026-07-17T02:48:08.799Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.1/release-manifest.json": {
+      "size": 1660,
+      "sha256": "0fb5d1adee572abf9e9f9a01773afda51389b284a791a8cff905e8ae35823584",
+      "synchronizedAt": "2026-07-17T02:48:08.799Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.1/yeelight-pro-app-builder-codex-plugin-v0.1.1.zip": {
+      "size": 820131,
+      "sha256": "30510d95e620e3e7896d4f631261106f88bab793c76a7e195ac4cf8e9cf8afaf",
+      "synchronizedAt": "2026-07-17T02:48:27.936Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.2/yeelight-pro-app-builder-release-v0.1.2.tar.gz": {
+      "size": 2969202,
+      "sha256": "47c7b1ab26b27cf9752c25a5c3f0923c59339397a0aa6c2888c9e868170378b0",
+      "synchronizedAt": "2026-07-17T02:48:28.202Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.1/yeelight-pro-app-builder-agent-skill-v0.1.1.zip": {
+      "size": 813778,
+      "sha256": "8f40fffa9b4f21a6ca069c5f23416e4b3b0db6602d2300d09c15db00a540f06a",
+      "synchronizedAt": "2026-07-17T02:48:29.239Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.1/yeelight-pro-app-builder-claude-skill-v0.1.1.zip": {
+      "size": 814287,
+      "sha256": "34cb59642580a586b2f131115b4acd113ce3abccc9bda7fdc7fffbcdaa29b9c4",
+      "synchronizedAt": "2026-07-17T02:48:31.423Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.1/yeelight-pro-app-builder-copilot-skill-v0.1.1.zip": {
+      "size": 814307,
+      "sha256": "f9caa1b16200325c21d1a6cd113f1896c0ec038e1a610bbcd22d21f79e3fd172",
+      "synchronizedAt": "2026-07-17T02:48:54.445Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.1/yeelight-pro-app-builder-release-v0.1.1.tar.gz": {
+      "size": 2956854,
+      "sha256": "1a9863c1b0cec5f205ed972ba0590614d1f15b8819af1e3e0ab97a03a206a24d",
+      "synchronizedAt": "2026-07-17T02:49:53.212Z"
     }
   },
-  "synchronizedAt": "2026-07-17T00:15:59.989Z"
+  "synchronizedAt": "2026-07-17T02:49:53.212Z"
 }
