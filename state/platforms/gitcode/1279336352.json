@@ -163,27 +163,27 @@
     "v0.1.22/yeelight-home_0.1.22_linux_arm64.rpm": {
       "size": 4193003,
       "sha256": "6b598fa2874b06a3ffc6e3f5d2ab1ec3532cac0a0496e16b49e945bf6ec57715",
-      "synchronizedAt": "2026-07-21T03:51:42.451Z"
+      "synchronizedAt": "2026-07-21T09:45:21.142Z"
     },
     "v0.1.22/yeelight-home_0.1.22_linux_armv7.apk": {
       "size": 4550760,
       "sha256": "88457b7a6b57b844d3c49c41616d2220d36bc6235264b857defbc382ce53c715",
-      "synchronizedAt": "2026-07-21T03:51:43.542Z"
+      "synchronizedAt": "2026-07-21T09:46:57.808Z"
     },
     "v0.1.22/yeelight-home_0.1.22_linux_armv7.pkg.tar.zst": {
       "size": 4308325,
       "sha256": "fbb57a7ce22246bf4c00ab7ebab412364398ec74647cdd21d5762feae01cd22b",
-      "synchronizedAt": "2026-07-21T03:51:44.978Z"
+      "synchronizedAt": "2026-07-21T09:46:52.388Z"
     },
     "v0.1.22/yeelight-home_0.1.22_linux_armv7.deb": {
       "size": 4363972,
       "sha256": "5ae12ac647fb5d7cf74bce729065c121ff7512d7bc1d0cb1262fb360fced3def",
-      "synchronizedAt": "2026-07-21T03:51:45.751Z"
+      "synchronizedAt": "2026-07-21T09:47:07.558Z"
     },
     "v0.1.22/yeelight-home_0.1.22_linux_armv7.rpm": {
       "size": 4345135,
       "sha256": "f4e94b1a1a1fd72bfafb296a36eb882d93dc15b587dfef838b43da198313d454",
-      "synchronizedAt": "2026-07-21T03:51:46.586Z"
+      "synchronizedAt": "2026-07-21T09:47:18.636Z"
     },
     "v0.1.22/yeelight-home-darwin-amd64.tar.gz": {
       "size": 4680704,
@@ -191,5 +191,5 @@
       "synchronizedAt": "2026-07-21T03:53:28.466Z"
     }
   },
-  "synchronizedAt": "2026-07-21T03:53:28.466Z"
+  "synchronizedAt": "2026-07-21T09:47:18.636Z"
 }
