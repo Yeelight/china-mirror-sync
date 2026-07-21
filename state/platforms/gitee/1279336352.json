@@ -4,7 +4,7 @@
   "repository": "yeelight-home",
   "platform": "gitee",
   "refs": {
-    "refs/heads/main": "515dd4608f418f8163b64e2089e28789261658c2",
+    "refs/heads/main": "0cbf055b51f95c6ae99ad0389c745e3ee32768d9",
     "refs/tags/v0.1.1": "6cb7f6c3998c2f90cdb601b7cfd416029b3c07cb",
     "refs/tags/v0.1.10": "94be249150ffc090818604356c5394721bd8865f",
     "refs/tags/v0.1.11": "17fb826f26a53e0b390eb0a9e96af356f179f512",
@@ -131,5 +131,5 @@
       "synchronizedAt": "2026-07-21T04:09:32.956Z"
     }
   },
-  "synchronizedAt": "2026-07-21T12:03:10.676Z"
+  "synchronizedAt": "2026-07-21T14:28:23.440Z"
 }
