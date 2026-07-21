@@ -4,7 +4,7 @@
   "repository": "yeelight-smart-home-skills",
   "platform": "gitee",
   "refs": {
-    "refs/heads/main": "f4792a6754bb2385c5a8d85fb70ae19175c01d2c",
+    "refs/heads/main": "9200b604b1a31c61fcd9196198c49ebb715cf4d5",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.0": "5c805f8e7243289b8e3c97ec793340c7151cb4b2",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.1": "de2a9ad91409b2ad41acd3feabea1babc159cc89",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.2": "f7b380d58c4602bfedc09a1b9ad588baa7574d63",
@@ -14,6 +14,7 @@
     "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.11": "e15d84fa380ad3e7276663c1911bf994954a7388",
     "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.12": "5c805f8e7243289b8e3c97ec793340c7151cb4b2",
     "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.13": "7dfd155d299ade16069fff3e76dfcc614bee6e2b",
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.14": "9200b604b1a31c61fcd9196198c49ebb715cf4d5",
     "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.2": "1c93825bc9fc7fc15b1700d76c478a1cf9c6789c",
     "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.3": "106010e73b2d29b871f2ee7cfe972537b93457f5",
     "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.4": "06d07414b8d0f953088c79f8803ce5ac9beb1768",
@@ -118,7 +119,52 @@
       "size": 2956854,
       "sha256": "1a9863c1b0cec5f205ed972ba0590614d1f15b8819af1e3e0ab97a03a206a24d",
       "synchronizedAt": "2026-07-17T02:53:29.508Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.14/channel-matrix.json": {
+      "size": 2021,
+      "sha256": "88e269d5da15dc1d8c03142bb4e17d57f6b285fa47f37b073eff26e2e7c93a00",
+      "synchronizedAt": "2026-07-21T04:10:32.284Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.14/checksums.txt": {
+      "size": 810,
+      "sha256": "6cec67f82df5fd0673ab1fe8923e454cc2edbd0d94d47da5b4c0d43286ef1d7e",
+      "synchronizedAt": "2026-07-21T04:10:33.359Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.14/release-manifest.json": {
+      "size": 1635,
+      "sha256": "de6dddde4b157fa5a85d37c331628ea0e560a184ee929072f7bf112e16c8ea46",
+      "synchronizedAt": "2026-07-21T04:10:34.600Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.14/release-notes.md": {
+      "size": 320,
+      "sha256": "f93dfb13fcec4212de95c163e80bf95060196600201670e8d44d27abb87d8998",
+      "synchronizedAt": "2026-07-21T04:10:35.873Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.14/yeelight-smart-home-agent-skill-v0.1.14.zip": {
+      "size": 161133,
+      "sha256": "95e35cdbe295184b6e0db72a9af7d39b6dd005774a0e593238e35f60ce3dd458",
+      "synchronizedAt": "2026-07-21T04:10:48.642Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.14/yeelight-smart-home-claude-skill-v0.1.14.zip": {
+      "size": 161638,
+      "sha256": "20b2100864284408452da98735bb04ee2376476e1de289df4f581f4a2b1f591a",
+      "synchronizedAt": "2026-07-21T04:10:55.193Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.14/yeelight-smart-home-codex-plugin-v0.1.14.zip": {
+      "size": 162922,
+      "sha256": "f68c309c5fbfdac5ad38ac3078b9e96d71ab36132d3ad6838de6037e4d4ce4f0",
+      "synchronizedAt": "2026-07-21T04:11:03.209Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.14/yeelight-smart-home-copilot-skill-v0.1.14.zip": {
+      "size": 161651,
+      "sha256": "86a76da4d71d3c144acb292536326975c8bb0a317ae983487f1fbebf71d802cf",
+      "synchronizedAt": "2026-07-21T04:11:12.158Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.14/yeelight-smart-home-release-v0.1.14.tar.gz": {
+      "size": 616883,
+      "sha256": "54e3cf098925102b4d570996f4c72ad27bcda0677a0788dc874203cc971018fd",
+      "synchronizedAt": "2026-07-21T04:11:29.026Z"
     }
   },
-  "synchronizedAt": "2026-07-20T23:28:21.657Z"
+  "synchronizedAt": "2026-07-21T04:11:29.026Z"
 }

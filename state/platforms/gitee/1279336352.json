@@ -4,7 +4,7 @@
   "repository": "yeelight-home",
   "platform": "gitee",
   "refs": {
-    "refs/heads/main": "e926c67264a48ffdb10a5c7407ef48030a1db7ff",
+    "refs/heads/main": "515dd4608f418f8163b64e2089e28789261658c2",
     "refs/tags/v0.1.1": "6cb7f6c3998c2f90cdb601b7cfd416029b3c07cb",
     "refs/tags/v0.1.10": "94be249150ffc090818604356c5394721bd8865f",
     "refs/tags/v0.1.11": "17fb826f26a53e0b390eb0a9e96af356f179f512",
@@ -19,6 +19,7 @@
     "refs/tags/v0.1.2": "ce7908338cc3a2fccbf2f72fa62027c3f60bf6ef",
     "refs/tags/v0.1.20": "45fc41d2e398f4fefcf761daedff013005316dd4",
     "refs/tags/v0.1.21": "e0524d83705b9e713f703dab0d722458582e2253",
+    "refs/tags/v0.1.22": "bd286275ae7b10ca5419dfb47e1415928564a0c3",
     "refs/tags/v0.1.3": "78d3b8eff0e41595ffa5fac63b13b896f32ddb73",
     "refs/tags/v0.1.4": "4522c8ebee4b77a753c0933eaa5f21bebb749854",
     "refs/tags/v0.1.5": "d012ea292467bbe2969949bfe48b4d4bcd6fdc2d",
@@ -28,6 +29,107 @@
     "refs/tags/v0.1.9": "d3238e364e6d8a38f6cc436993aa8aaa9d6eeaf0",
     "refs/tags/yeelight-home-v0.1.0": "ac063bfd3d9b0f3dbbcc9acd9d4cebd9f87d857e"
   },
-  "managedAssets": {},
-  "synchronizedAt": "2026-07-20T23:28:09.096Z"
+  "managedAssets": {
+    "v0.1.22/checksums.txt": {
+      "size": 2962,
+      "sha256": "7e32996df65ff4195d87fb86adf74635542a435abff9dabfdce8a8fbcddb30f4",
+      "synchronizedAt": "2026-07-21T03:51:16.216Z"
+    },
+    "v0.1.22/install.ps1": {
+      "size": 2719,
+      "sha256": "382c268ba5f5df2786ad1bfcce8c057a967c16e47cc83690311d6d7d7ffe70af",
+      "synchronizedAt": "2026-07-21T03:51:17.324Z"
+    },
+    "v0.1.22/install.sh": {
+      "size": 2656,
+      "sha256": "83e4ba1c150420b561619b5f4c5432bf70e2f267f89833ce0f92ea436dc8fa63",
+      "synchronizedAt": "2026-07-21T03:51:18.368Z"
+    },
+    "v0.1.22/metadata.json": {
+      "size": 220,
+      "sha256": "a4e76ef7caaa752a7a89d0c32b666d73101fcb6dc4f066932437f9f2456defd4",
+      "synchronizedAt": "2026-07-21T03:51:19.451Z"
+    },
+    "v0.1.22/yeelight-home-0.1.22.tgz": {
+      "size": 32038,
+      "sha256": "bcacbff29e5edeb7cfbe4ddb5eeb8bb60ea95e8ee2871178e2132f4adf9acb6c",
+      "synchronizedAt": "2026-07-21T03:51:21.146Z"
+    },
+    "v0.1.22/yeelight-home-darwin-amd64.tar.gz": {
+      "size": 4680704,
+      "sha256": "e6538a5bf1e8c996c0deab76cb2dcf1d9fa4452ad8ddb1887ee82e19d3d00f33",
+      "synchronizedAt": "2026-07-21T03:53:40.526Z"
+    },
+    "v0.1.22/yeelight-home-darwin-amd64.tar.gz.sbom.json": {
+      "size": 11382,
+      "sha256": "19ce65c81a13ca1c81f2c9200eb2362aaff70bab10c593a6d9b349a2a99fcbed",
+      "synchronizedAt": "2026-07-21T03:53:41.884Z"
+    },
+    "v0.1.22/yeelight-home-darwin-arm64.tar.gz": {
+      "size": 4410027,
+      "sha256": "53fbd428354edd0d0d96339944fad9fe6e61b90a0d3dff918ab50df7790a01e5",
+      "synchronizedAt": "2026-07-21T03:55:52.734Z"
+    },
+    "v0.1.22/yeelight-home-darwin-arm64.tar.gz.sbom.json": {
+      "size": 11382,
+      "sha256": "709b809dfa0c4e364008d78dad8e81a16cb535a14154a28333df76d021a4bc50",
+      "synchronizedAt": "2026-07-21T03:55:54.028Z"
+    },
+    "v0.1.22/yeelight-home-linux-amd64.tar.gz": {
+      "size": 4580226,
+      "sha256": "6c9fb199b81e3f57fe37a2dea16ab8a06c1c1dd74098f9ca6aba1cf422423759",
+      "synchronizedAt": "2026-07-21T03:58:06.997Z"
+    },
+    "v0.1.22/yeelight-home-linux-amd64.tar.gz.sbom.json": {
+      "size": 11370,
+      "sha256": "064ee7fd67759f1d6b56e30271a6fb8a1e251b0bd7343bdd0544d221489a7956",
+      "synchronizedAt": "2026-07-21T03:58:08.338Z"
+    },
+    "v0.1.22/yeelight-home-linux-arm64.tar.gz": {
+      "size": 4214807,
+      "sha256": "b7c3056aec5d6ced9194544ccf560e368bf2f71601b379ffb34133cf045215ef",
+      "synchronizedAt": "2026-07-21T04:00:12.244Z"
+    },
+    "v0.1.22/yeelight-home-linux-arm64.tar.gz.sbom.json": {
+      "size": 11370,
+      "sha256": "0eab4512e5e37ca03bc7a117ee4e80e9254f4661a6ef3c415615cc0c9a57d399",
+      "synchronizedAt": "2026-07-21T04:00:13.596Z"
+    },
+    "v0.1.22/yeelight-home-linux-armv7.tar.gz": {
+      "size": 4363354,
+      "sha256": "054725d4d8631f0f8ae47f69797e3ca11281e090612b7d9bb4e6e287e818d84f",
+      "synchronizedAt": "2026-07-21T04:02:28.591Z"
+    },
+    "v0.1.22/yeelight-home-linux-armv7.tar.gz.sbom.json": {
+      "size": 11370,
+      "sha256": "9395223b5bb883a58906d237a4c295178f2fde9c5e8b253640e73db814b83720",
+      "synchronizedAt": "2026-07-21T04:02:29.990Z"
+    },
+    "v0.1.22/yeelight-home-windows-amd64.zip": {
+      "size": 4694530,
+      "sha256": "909e446069651806dbf611e8d3c1cc7b8b15fb82ececd297956468f8fc9cf919",
+      "synchronizedAt": "2026-07-21T04:04:56.076Z"
+    },
+    "v0.1.22/yeelight-home-windows-amd64.zip.sbom.json": {
+      "size": 13059,
+      "sha256": "0c3144bbe34a98e7b58bfe3e927da3d43e60123d4f58bb5afc4d18c4b1235c62",
+      "synchronizedAt": "2026-07-21T04:04:57.384Z"
+    },
+    "v0.1.22/yeelight-home-windows-arm64.zip.sbom.json": {
+      "size": 13059,
+      "sha256": "647996748e3f61eeca77627e3d4ae16f7a9dd5b4e816ad655f5a1862f0489776",
+      "synchronizedAt": "2026-07-21T04:04:58.633Z"
+    },
+    "v0.1.22/yeelight-home_0.1.22_linux_amd64.deb": {
+      "size": 4580864,
+      "sha256": "d2214a4da4b68765b89b1c31c6e017dc67d9b6fbc1d3924fa271fcd98d001a65",
+      "synchronizedAt": "2026-07-21T04:07:26.761Z"
+    },
+    "v0.1.22/yeelight-home_0.1.22_linux_arm64.deb": {
+      "size": 4215472,
+      "sha256": "2b08b104c6fe39ed70491f739e4a009a364c58b24b386d53495a8218fe39bd2a",
+      "synchronizedAt": "2026-07-21T04:09:32.956Z"
+    }
+  },
+  "synchronizedAt": "2026-07-21T04:09:32.956Z"
 }
