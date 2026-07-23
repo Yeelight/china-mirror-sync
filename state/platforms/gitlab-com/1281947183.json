@@ -4,7 +4,7 @@
   "repository": "yeelight-smart-home-skills",
   "platform": "gitlab-com",
   "refs": {
-    "refs/heads/main": "19caded2792457a7223914f2a9172e50b045bb68",
+    "refs/heads/main": "f7c053cb560105d49cfa849493cf9daff57f2952",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.0": "5c805f8e7243289b8e3c97ec793340c7151cb4b2",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.1": "de2a9ad91409b2ad41acd3feabea1babc159cc89",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.2": "f7b380d58c4602bfedc09a1b9ad588baa7574d63",
@@ -161,5 +161,5 @@
       "synchronizedAt": "2026-07-21T16:46:12.398Z"
     }
   },
-  "synchronizedAt": "2026-07-23T09:39:53.082Z"
+  "synchronizedAt": "2026-07-23T12:05:25.217Z"
 }
