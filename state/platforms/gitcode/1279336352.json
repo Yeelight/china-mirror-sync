@@ -320,23 +320,23 @@
     "v0.1.23/yeelight-home_0.1.23_linux_armv7.apk": {
       "size": 4536234,
       "sha256": "c332d6552345e3fd6ae0a561f2d72e16e4f406a0565b24cc7d43a0fa36774b99",
-      "synchronizedAt": "2026-07-22T22:18:52.489Z"
+      "synchronizedAt": "2026-07-23T00:15:43.159Z"
     },
     "v0.1.23/yeelight-home_0.1.23_linux_armv7.pkg.tar.zst": {
       "size": 4312205,
       "sha256": "2d85dd88d1395e752e053f9631f7a007710edca2f7268d18ae681c8c613f9e7b",
-      "synchronizedAt": "2026-07-22T22:18:53.486Z"
+      "synchronizedAt": "2026-07-23T00:15:43.260Z"
     },
     "v0.1.23/yeelight-home_0.1.23_linux_armv7.rpm": {
       "size": 4350880,
       "sha256": "c1b4da6ba0e396cce08e3b325b3984684c26338490fbb0b117440f0f9331c16a",
-      "synchronizedAt": "2026-07-22T22:18:53.656Z"
+      "synchronizedAt": "2026-07-23T00:15:43.552Z"
     },
     "v0.1.23/yeelight-home_0.1.23_linux_armv7.deb": {
       "size": 4371574,
       "sha256": "e90cfa14316188c66cabc163eb426629c726fb39abee1304febea719dfbc3180",
-      "synchronizedAt": "2026-07-22T22:18:53.710Z"
+      "synchronizedAt": "2026-07-23T00:15:43.266Z"
     }
   },
-  "synchronizedAt": "2026-07-22T22:18:53.710Z"
+  "synchronizedAt": "2026-07-23T00:15:43.552Z"
 }
