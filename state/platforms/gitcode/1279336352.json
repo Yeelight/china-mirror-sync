@@ -4,7 +4,7 @@
   "repository": "yeelight-home",
   "platform": "gitcode",
   "refs": {
-    "refs/heads/main": "fc6dfec6b4a7b6b9f11b9112e1cf2315d710b54d",
+    "refs/heads/main": "f54aeb44c7ddc6537cd7c3c1312b745cb94260cf",
     "refs/tags/v0.1.1": "6cb7f6c3998c2f90cdb601b7cfd416029b3c07cb",
     "refs/tags/v0.1.10": "94be249150ffc090818604356c5394721bd8865f",
     "refs/tags/v0.1.11": "17fb826f26a53e0b390eb0a9e96af356f179f512",
@@ -22,6 +22,8 @@
     "refs/tags/v0.1.22": "bd286275ae7b10ca5419dfb47e1415928564a0c3",
     "refs/tags/v0.1.23": "df84250bff516aa4a8d1001c1b39ca3bd9027dde",
     "refs/tags/v0.1.24": "e8e4eeff1fe8c868d026b8d1b420d908ca54f8fe",
+    "refs/tags/v0.1.25": "68bcb4a86a7692c11560cc9122bab357a2fb32cb",
+    "refs/tags/v0.1.26": "c2aecf9b50ca7707be50a36ddff8ee3d9dd8bb3e",
     "refs/tags/v0.1.3": "78d3b8eff0e41595ffa5fac63b13b896f32ddb73",
     "refs/tags/v0.1.4": "4522c8ebee4b77a753c0933eaa5f21bebb749854",
     "refs/tags/v0.1.5": "d012ea292467bbe2969949bfe48b4d4bcd6fdc2d",
@@ -336,7 +338,22 @@
       "size": 4371574,
       "sha256": "e90cfa14316188c66cabc163eb426629c726fb39abee1304febea719dfbc3180",
       "synchronizedAt": "2026-07-23T00:15:43.266Z"
+    },
+    "v0.1.26/yeelight-home-darwin-arm64.tar.gz": {
+      "size": 4868337,
+      "sha256": "14419f30c015754b423ce87e74cf7f9e306f97873790476d0d77d2156f37cb94",
+      "synchronizedAt": "2026-07-24T00:15:56.469Z"
+    },
+    "v0.1.26/yeelight-home-darwin-amd64.tar.gz": {
+      "size": 5165391,
+      "sha256": "c3ee694095fd51bc1cbdb1947e78e607eae174fe38c8bdf8186f087d102b8336",
+      "synchronizedAt": "2026-07-24T00:15:56.592Z"
+    },
+    "v0.1.26/yeelight-home-windows-amd64.zip": {
+      "size": 5184398,
+      "sha256": "175105835f711badb15b8e3f38a209fef8457c6a2f5342eab0713a019fdbdc9d",
+      "synchronizedAt": "2026-07-24T00:15:56.701Z"
     }
   },
-  "synchronizedAt": "2026-07-23T00:15:43.552Z"
+  "synchronizedAt": "2026-07-24T00:15:56.701Z"
 }
