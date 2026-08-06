@@ -4,7 +4,7 @@
   "repository": "yeelight-smart-home-skills",
   "platform": "gitee",
   "refs": {
-    "refs/heads/main": "d337c9a87c9ce904d8a6c1601386d9123826c4f3",
+    "refs/heads/main": "fa14e9c5f1183721f9d49e6f84d71685a571c47e",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.0": "5c805f8e7243289b8e3c97ec793340c7151cb4b2",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.1": "de2a9ad91409b2ad41acd3feabea1babc159cc89",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.2": "f7b380d58c4602bfedc09a1b9ad588baa7574d63",
@@ -166,5 +166,5 @@
       "synchronizedAt": "2026-07-21T04:11:29.026Z"
     }
   },
-  "synchronizedAt": "2026-08-06T10:09:34.997Z"
+  "synchronizedAt": "2026-08-06T12:32:10.098Z"
 }
