@@ -5,8 +5,8 @@
   "platform": "gitlab-com",
   "refs": {
     "refs/heads/main": "ea2aeabfa35cc1b0b92b36efa6b44b5b597231d2",
-    "refs/heads/mirror-state": "aa4756a8e0e196cc5eb10976a1de6153ae0d488e"
+    "refs/heads/mirror-state": "ef117d010dd45d14413afb86aea3622cfd76797b"
   },
   "managedAssets": {},
-  "synchronizedAt": "2026-08-14T22:43:00.721Z"
+  "synchronizedAt": "2026-08-14T23:41:05.614Z"
 }
