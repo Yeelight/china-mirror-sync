@@ -4,7 +4,7 @@
   "repository": "yeelight-smart-home-skills",
   "platform": "gitcode",
   "refs": {
-    "refs/heads/main": "fa14e9c5f1183721f9d49e6f84d71685a571c47e",
+    "refs/heads/main": "60efa88bdf33f09987e76055e707a9610b9b33fa",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.0": "5c805f8e7243289b8e3c97ec793340c7151cb4b2",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.1": "de2a9ad91409b2ad41acd3feabea1babc159cc89",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.2": "f7b380d58c4602bfedc09a1b9ad588baa7574d63",
@@ -22,7 +22,8 @@
     "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.6": "9d346d23f9e177329d7d847bb0e163e3d5885ea6",
     "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.7": "19f0d4a4f781f5e6cf47b6f8b5e3fa55dd144dd9",
     "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.8": "e7c3c12ab1f38b8a778cc5db4eaeb4c9e95f73ab",
-    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.9": "86ad82f78a026d6428366a396bced116a4bec094"
+    "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.9": "86ad82f78a026d6428366a396bced116a4bec094",
+    "refs/tags/yeelight-skill-yeelight-wifi-lan-control-v0.1.0": "60efa88bdf33f09987e76055e707a9610b9b33fa"
   },
   "managedAssets": {
     "yeelight-skill-yeelight-smart-home-v0.1.13/channel-matrix.json": {
@@ -204,7 +205,52 @@
       "size": 616883,
       "sha256": "54e3cf098925102b4d570996f4c72ad27bcda0677a0788dc874203cc971018fd",
       "synchronizedAt": "2026-07-21T03:54:16.885Z"
+    },
+    "yeelight-skill-yeelight-wifi-lan-control-v0.1.0/checksums.txt": {
+      "size": 835,
+      "sha256": "df2def041da12ab10a0ff54125ff8d1919bde264ffd4d10726281c3da820ca72",
+      "synchronizedAt": "2026-08-14T08:41:03.931Z"
+    },
+    "yeelight-skill-yeelight-wifi-lan-control-v0.1.0/release-manifest.json": {
+      "size": 1676,
+      "sha256": "a9f31139c952dc77e0d300b47477c8b05f295e110fa5277284b2f2c3bc0556c7",
+      "synchronizedAt": "2026-08-14T08:41:04.011Z"
+    },
+    "yeelight-skill-yeelight-wifi-lan-control-v0.1.0/release-notes.md": {
+      "size": 325,
+      "sha256": "0cbcde3999aa3dc8c5c4ab38d122369e8d7b81708138453c0d2bd3fcdbe57c73",
+      "synchronizedAt": "2026-08-14T08:41:04.032Z"
+    },
+    "yeelight-skill-yeelight-wifi-lan-control-v0.1.0/channel-matrix.json": {
+      "size": 1873,
+      "sha256": "35a2b0fc4b3eb46beb3b705a390690c865effcac932f92670a71f47824eaaf99",
+      "synchronizedAt": "2026-08-14T08:41:04.159Z"
+    },
+    "yeelight-skill-yeelight-wifi-lan-control-v0.1.0/yeelight-wifi-lan-control-codex-plugin-v0.1.0.zip": {
+      "size": 114465,
+      "sha256": "3f7f5976ac3adebfa7961330f38e8f8bc361b111227ded2671a408f2a30360e8",
+      "synchronizedAt": "2026-08-14T08:41:07.315Z"
+    },
+    "yeelight-skill-yeelight-wifi-lan-control-v0.1.0/yeelight-wifi-lan-control-agent-skill-v0.1.0.zip": {
+      "size": 112677,
+      "sha256": "832d4890ebc68ddf37db1779a6da7c98043c6d2e487c6825b3d5a828559d8071",
+      "synchronizedAt": "2026-08-14T08:41:07.422Z"
+    },
+    "yeelight-skill-yeelight-wifi-lan-control-v0.1.0/yeelight-wifi-lan-control-release-v0.1.0.tar.gz": {
+      "size": 424844,
+      "sha256": "fe4e0966276ae1d7b42cd2d0ab95f369404a904a743a26b9f8e785c07afa341a",
+      "synchronizedAt": "2026-08-14T08:41:11.558Z"
+    },
+    "yeelight-skill-yeelight-wifi-lan-control-v0.1.0/yeelight-wifi-lan-control-copilot-skill-v0.1.0.zip": {
+      "size": 113207,
+      "sha256": "70dc69eb1be5cd393df1b6d7323ddd8995d2320e6224a09fc8df0296663cf31b",
+      "synchronizedAt": "2026-08-14T08:41:12.256Z"
+    },
+    "yeelight-skill-yeelight-wifi-lan-control-v0.1.0/yeelight-wifi-lan-control-claude-skill-v0.1.0.zip": {
+      "size": 113182,
+      "sha256": "da76fc58798a5134ded7cca2ccca448b51b5fad3adbf3b002a373098d00969f8",
+      "synchronizedAt": "2026-08-14T08:41:13.970Z"
     }
   },
-  "synchronizedAt": "2026-08-14T06:46:32.788Z"
+  "synchronizedAt": "2026-08-14T08:41:13.971Z"
 }
