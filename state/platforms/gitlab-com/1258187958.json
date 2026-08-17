@@ -12,6 +12,12 @@
     "refs/tags/v1.0.4": "b5e276821177a7e9826fd72db589d78f3ecb7a61",
     "refs/tags/v1.0.5": "b9a6a60e7586078dad5973e99d9d2dc1bc610c47"
   },
-  "managedAssets": {},
-  "synchronizedAt": "2026-08-17T15:43:30.918Z"
+  "managedAssets": {
+    "v1.0.5/yeelight_pro.zip": {
+      "size": 798245,
+      "sha256": "99364af602e3fb7de3441431cd0c2608d84b5b27b477b99116736e655fe27a33",
+      "synchronizedAt": "2026-08-17T16:49:18.966Z"
+    }
+  },
+  "synchronizedAt": "2026-08-17T16:49:18.966Z"
 }

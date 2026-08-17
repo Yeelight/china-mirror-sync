@@ -25,6 +25,187 @@
     "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.9": "86ad82f78a026d6428366a396bced116a4bec094",
     "refs/tags/yeelight-skill-yeelight-wifi-lan-control-v0.1.0": "60efa88bdf33f09987e76055e707a9610b9b33fa"
   },
-  "managedAssets": {},
-  "synchronizedAt": "2026-08-17T15:44:32.669Z"
+  "managedAssets": {
+    "yeelight-skill-yeelight-wifi-lan-control-v0.1.0/channel-matrix.json": {
+      "size": 1873,
+      "sha256": "35a2b0fc4b3eb46beb3b705a390690c865effcac932f92670a71f47824eaaf99",
+      "synchronizedAt": "2026-08-17T16:56:50.210Z"
+    },
+    "yeelight-skill-yeelight-wifi-lan-control-v0.1.0/checksums.txt": {
+      "size": 835,
+      "sha256": "df2def041da12ab10a0ff54125ff8d1919bde264ffd4d10726281c3da820ca72",
+      "synchronizedAt": "2026-08-17T16:56:51.298Z"
+    },
+    "yeelight-skill-yeelight-wifi-lan-control-v0.1.0/release-manifest.json": {
+      "size": 1676,
+      "sha256": "a9f31139c952dc77e0d300b47477c8b05f295e110fa5277284b2f2c3bc0556c7",
+      "synchronizedAt": "2026-08-17T16:56:53.057Z"
+    },
+    "yeelight-skill-yeelight-wifi-lan-control-v0.1.0/release-notes.md": {
+      "size": 325,
+      "sha256": "0cbcde3999aa3dc8c5c4ab38d122369e8d7b81708138453c0d2bd3fcdbe57c73",
+      "synchronizedAt": "2026-08-17T16:56:54.168Z"
+    },
+    "yeelight-skill-yeelight-wifi-lan-control-v0.1.0/yeelight-wifi-lan-control-agent-skill-v0.1.0.zip": {
+      "size": 112677,
+      "sha256": "832d4890ebc68ddf37db1779a6da7c98043c6d2e487c6825b3d5a828559d8071",
+      "synchronizedAt": "2026-08-17T16:56:57.164Z"
+    },
+    "yeelight-skill-yeelight-wifi-lan-control-v0.1.0/yeelight-wifi-lan-control-claude-skill-v0.1.0.zip": {
+      "size": 113182,
+      "sha256": "da76fc58798a5134ded7cca2ccca448b51b5fad3adbf3b002a373098d00969f8",
+      "synchronizedAt": "2026-08-17T16:57:03.849Z"
+    },
+    "yeelight-skill-yeelight-wifi-lan-control-v0.1.0/yeelight-wifi-lan-control-codex-plugin-v0.1.0.zip": {
+      "size": 114465,
+      "sha256": "3f7f5976ac3adebfa7961330f38e8f8bc361b111227ded2671a408f2a30360e8",
+      "synchronizedAt": "2026-08-17T16:57:10.443Z"
+    },
+    "yeelight-skill-yeelight-wifi-lan-control-v0.1.0/yeelight-wifi-lan-control-copilot-skill-v0.1.0.zip": {
+      "size": 113207,
+      "sha256": "70dc69eb1be5cd393df1b6d7323ddd8995d2320e6224a09fc8df0296663cf31b",
+      "synchronizedAt": "2026-08-17T16:57:17.391Z"
+    },
+    "yeelight-skill-yeelight-wifi-lan-control-v0.1.0/yeelight-wifi-lan-control-release-v0.1.0.tar.gz": {
+      "size": 424844,
+      "sha256": "fe4e0966276ae1d7b42cd2d0ab95f369404a904a743a26b9f8e785c07afa341a",
+      "synchronizedAt": "2026-08-17T16:57:34.457Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.14/channel-matrix.json": {
+      "size": 2021,
+      "sha256": "88e269d5da15dc1d8c03142bb4e17d57f6b285fa47f37b073eff26e2e7c93a00",
+      "synchronizedAt": "2026-08-17T16:57:36.494Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.14/checksums.txt": {
+      "size": 810,
+      "sha256": "6cec67f82df5fd0673ab1fe8923e454cc2edbd0d94d47da5b4c0d43286ef1d7e",
+      "synchronizedAt": "2026-08-17T16:57:37.799Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.14/release-manifest.json": {
+      "size": 1635,
+      "sha256": "de6dddde4b157fa5a85d37c331628ea0e560a184ee929072f7bf112e16c8ea46",
+      "synchronizedAt": "2026-08-17T16:57:39.046Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.14/release-notes.md": {
+      "size": 320,
+      "sha256": "f93dfb13fcec4212de95c163e80bf95060196600201670e8d44d27abb87d8998",
+      "synchronizedAt": "2026-08-17T16:57:40.534Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.14/yeelight-smart-home-agent-skill-v0.1.14.zip": {
+      "size": 161133,
+      "sha256": "95e35cdbe295184b6e0db72a9af7d39b6dd005774a0e593238e35f60ce3dd458",
+      "synchronizedAt": "2026-08-17T16:57:48.447Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.14/yeelight-smart-home-claude-skill-v0.1.14.zip": {
+      "size": 161638,
+      "sha256": "20b2100864284408452da98735bb04ee2376476e1de289df4f581f4a2b1f591a",
+      "synchronizedAt": "2026-08-17T16:57:54.484Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.14/yeelight-smart-home-codex-plugin-v0.1.14.zip": {
+      "size": 162922,
+      "sha256": "f68c309c5fbfdac5ad38ac3078b9e96d71ab36132d3ad6838de6037e4d4ce4f0",
+      "synchronizedAt": "2026-08-17T16:58:01.934Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.14/yeelight-smart-home-copilot-skill-v0.1.14.zip": {
+      "size": 161651,
+      "sha256": "86a76da4d71d3c144acb292536326975c8bb0a317ae983487f1fbebf71d802cf",
+      "synchronizedAt": "2026-08-17T16:58:10.315Z"
+    },
+    "yeelight-skill-yeelight-smart-home-v0.1.14/yeelight-smart-home-release-v0.1.14.tar.gz": {
+      "size": 616883,
+      "sha256": "54e3cf098925102b4d570996f4c72ad27bcda0677a0788dc874203cc971018fd",
+      "synchronizedAt": "2026-08-17T16:58:44.005Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.2/channel-matrix.json": {
+      "size": 1872,
+      "sha256": "e26540937c30efbbc3a431bef551696786f344f244e35f7cb4d25fb870039f9b",
+      "synchronizedAt": "2026-08-17T16:58:45.182Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.2/checksums.txt": {
+      "size": 830,
+      "sha256": "2d9b301b88358965bbeb4ea0240f093aba62601ee1041b08b39124953762c487",
+      "synchronizedAt": "2026-08-17T16:58:46.578Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.2/release-manifest.json": {
+      "size": 1660,
+      "sha256": "43468305cc6dbe9eaf8b8ce554193dd9cf108f67f513f148fa094bcd0b419f37",
+      "synchronizedAt": "2026-08-17T16:58:47.885Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.2/release-notes.md": {
+      "size": 324,
+      "sha256": "f19d5709e52ada9a0d45ad0252898ec4bad90ec68a031d4fcaedef5c1d8334b5",
+      "synchronizedAt": "2026-08-17T16:58:49.382Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.2/yeelight-pro-app-builder-agent-skill-v0.1.2.zip": {
+      "size": 817085,
+      "sha256": "2b9f609418bf72019bc029f372370fee7744bd8720e000a0668dc5cfb1bb622e",
+      "synchronizedAt": "2026-08-17T16:59:25.099Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.2/yeelight-pro-app-builder-claude-skill-v0.1.2.zip": {
+      "size": 817592,
+      "sha256": "97932553a73b81038046b9fce182ca4819d28bc5b9d4ef4f10e649d53916ab0f",
+      "synchronizedAt": "2026-08-17T17:00:00.626Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.2/yeelight-pro-app-builder-codex-plugin-v0.1.2.zip": {
+      "size": 823457,
+      "sha256": "77cae5430783d593ccc1f849b24bb437a636d20cc45a9802b5db9b559cf919e2",
+      "synchronizedAt": "2026-08-17T17:00:32.029Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.2/yeelight-pro-app-builder-copilot-skill-v0.1.2.zip": {
+      "size": 817608,
+      "sha256": "d5ed30c707700e10c62046d968463bc4e75569326f65882ea29186a81e19ddbd",
+      "synchronizedAt": "2026-08-17T17:01:05.085Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.2/yeelight-pro-app-builder-release-v0.1.2.tar.gz": {
+      "size": 2969202,
+      "sha256": "47c7b1ab26b27cf9752c25a5c3f0923c59339397a0aa6c2888c9e868170378b0",
+      "synchronizedAt": "2026-08-17T17:03:03.248Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.1/channel-matrix.json": {
+      "size": 1872,
+      "sha256": "d82238fb5bd156d7db38a73706dafb267793a957ef8fdc4cbbc4736e3a2531e4",
+      "synchronizedAt": "2026-08-17T17:03:04.447Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.1/checksums.txt": {
+      "size": 830,
+      "sha256": "ea3468c7cf0e3d14cfa56c5ac7b1afde63d9a61bcf1da30d40a1b9dc6b51b5a0",
+      "synchronizedAt": "2026-08-17T17:03:05.522Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.1/release-manifest.json": {
+      "size": 1660,
+      "sha256": "0fb5d1adee572abf9e9f9a01773afda51389b284a791a8cff905e8ae35823584",
+      "synchronizedAt": "2026-08-17T17:03:06.513Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.1/release-notes.md": {
+      "size": 324,
+      "sha256": "b1d7303cd3da95e9f741e25287f4016c332ad50fc8e49ad538c7a3d047bfcb01",
+      "synchronizedAt": "2026-08-17T17:03:07.794Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.1/yeelight-pro-app-builder-agent-skill-v0.1.1.zip": {
+      "size": 813778,
+      "sha256": "8f40fffa9b4f21a6ca069c5f23416e4b3b0db6602d2300d09c15db00a540f06a",
+      "synchronizedAt": "2026-08-17T17:03:32.223Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.1/yeelight-pro-app-builder-claude-skill-v0.1.1.zip": {
+      "size": 814287,
+      "sha256": "34cb59642580a586b2f131115b4acd113ce3abccc9bda7fdc7fffbcdaa29b9c4",
+      "synchronizedAt": "2026-08-17T17:03:54.266Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.1/yeelight-pro-app-builder-codex-plugin-v0.1.1.zip": {
+      "size": 820131,
+      "sha256": "30510d95e620e3e7896d4f631261106f88bab793c76a7e195ac4cf8e9cf8afaf",
+      "synchronizedAt": "2026-08-17T17:04:37.111Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.1/yeelight-pro-app-builder-copilot-skill-v0.1.1.zip": {
+      "size": 814307,
+      "sha256": "f9caa1b16200325c21d1a6cd113f1896c0ec038e1a610bbcd22d21f79e3fd172",
+      "synchronizedAt": "2026-08-17T17:05:21.519Z"
+    },
+    "yeelight-skill-yeelight-pro-app-builder-v0.1.1/yeelight-pro-app-builder-release-v0.1.1.tar.gz": {
+      "size": 2956854,
+      "sha256": "1a9863c1b0cec5f205ed972ba0590614d1f15b8819af1e3e0ab97a03a206a24d",
+      "synchronizedAt": "2026-08-17T17:07:10.957Z"
+    }
+  },
+  "synchronizedAt": "2026-08-17T17:07:10.957Z"
 }
