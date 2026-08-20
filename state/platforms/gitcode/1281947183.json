@@ -4,8 +4,9 @@
   "repository": "yeelight-smart-home-skills",
   "platform": "gitcode",
   "refs": {
-    "refs/heads/main": "0e8721e3fe62e3700a08bf1b6780a8750cbb1d99",
+    "refs/heads/main": "94bf68cfeabc6aabdf7fb2635627c0ed638f3d67",
     "refs/tags/yeelight-skill-yeelight-cinema-director-v0.1.0": "0e8721e3fe62e3700a08bf1b6780a8750cbb1d99",
+    "refs/tags/yeelight-skill-yeelight-interactive-light-experiences-v0.1.0": "94bf68cfeabc6aabdf7fb2635627c0ed638f3d67",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.0": "5c805f8e7243289b8e3c97ec793340c7151cb4b2",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.1": "de2a9ad91409b2ad41acd3feabea1babc159cc89",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.2": "f7b380d58c4602bfedc09a1b9ad588baa7574d63",
@@ -296,7 +297,12 @@
       "size": 376889,
       "sha256": "fbe10aa768514d683c20e67c0729f004c9c19ecab44ef5a90e63d7342de9d0d4",
       "synchronizedAt": "2026-08-18T04:56:56.145Z"
+    },
+    "yeelight-skill-yeelight-interactive-light-experiences-v0.1.0/yeelight-interactive-light-experiences-release-v0.1.0.tar.gz": {
+      "size": 15092866,
+      "sha256": "952a70759c82b781523fcdf372293a63111176868a3a792f4a1d0bc58ae6331d",
+      "synchronizedAt": "2026-08-20T17:49:11.555Z"
     }
   },
-  "synchronizedAt": "2026-08-20T08:00:27.040Z"
+  "synchronizedAt": "2026-08-20T17:49:11.555Z"
 }
