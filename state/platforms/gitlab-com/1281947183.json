@@ -4,8 +4,9 @@
   "repository": "yeelight-smart-home-skills",
   "platform": "gitlab-com",
   "refs": {
-    "refs/heads/main": "0e8721e3fe62e3700a08bf1b6780a8750cbb1d99",
+    "refs/heads/main": "94bf68cfeabc6aabdf7fb2635627c0ed638f3d67",
     "refs/tags/yeelight-skill-yeelight-cinema-director-v0.1.0": "0e8721e3fe62e3700a08bf1b6780a8750cbb1d99",
+    "refs/tags/yeelight-skill-yeelight-interactive-light-experiences-v0.1.0": "94bf68cfeabc6aabdf7fb2635627c0ed638f3d67",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.0": "5c805f8e7243289b8e3c97ec793340c7151cb4b2",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.1": "de2a9ad91409b2ad41acd3feabea1babc159cc89",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.2": "f7b380d58c4602bfedc09a1b9ad588baa7574d63",
@@ -251,7 +252,52 @@
       "size": 324,
       "sha256": "3579549593e8ba2516ae96606090d5ed13dadca1c580559b1a0fffe6f3c2dc16",
       "synchronizedAt": "2026-08-18T04:55:17.480Z"
+    },
+    "yeelight-skill-yeelight-interactive-light-experiences-v0.1.0/release-notes.md": {
+      "size": 338,
+      "sha256": "8a344b72d496d60c32c494fa4ddd601a5bbe2db2c8a9650ee160e149b6b1cd8f",
+      "synchronizedAt": "2026-08-20T09:52:43.622Z"
+    },
+    "yeelight-skill-yeelight-interactive-light-experiences-v0.1.0/channel-matrix.json": {
+      "size": 1886,
+      "sha256": "ec9485cde2eb22c96818424b11d41a82e6478c63ec800ab08932832e5eb74ee0",
+      "synchronizedAt": "2026-08-20T09:52:43.636Z"
+    },
+    "yeelight-skill-yeelight-interactive-light-experiences-v0.1.0/release-manifest.json": {
+      "size": 1749,
+      "sha256": "573d5d48e1bdb2a483f56d6607a1373fd5bd42b3d4e699d45440be64924d82e6",
+      "synchronizedAt": "2026-08-20T09:52:43.662Z"
+    },
+    "yeelight-skill-yeelight-interactive-light-experiences-v0.1.0/checksums.txt": {
+      "size": 900,
+      "sha256": "8c59cfe2a4fd7c07f830706c0dddd029c54eb2d1a132026def2a7e16d0cc39ad",
+      "synchronizedAt": "2026-08-20T09:52:43.837Z"
+    },
+    "yeelight-skill-yeelight-interactive-light-experiences-v0.1.0/yeelight-interactive-light-experiences-agent-skill-v0.1.0.zip": {
+      "size": 3781026,
+      "sha256": "45db206ffec8869e78bf47108e6630b86b6e38abf7205ab896844eede7a19cb3",
+      "synchronizedAt": "2026-08-20T09:52:45.540Z"
+    },
+    "yeelight-skill-yeelight-interactive-light-experiences-v0.1.0/yeelight-interactive-light-experiences-claude-skill-v0.1.0.zip": {
+      "size": 3781575,
+      "sha256": "cd4482343b795f794a42c938238d3ea9e6db29df118ad1188586e0da2ead741d",
+      "synchronizedAt": "2026-08-20T09:52:45.711Z"
+    },
+    "yeelight-skill-yeelight-interactive-light-experiences-v0.1.0/yeelight-interactive-light-experiences-codex-plugin-v0.1.0.zip": {
+      "size": 3782894,
+      "sha256": "15a10170271a26ae02aca5d8957e1cff53b992973155e086ae73d85fad7c5453",
+      "synchronizedAt": "2026-08-20T09:52:45.760Z"
+    },
+    "yeelight-skill-yeelight-interactive-light-experiences-v0.1.0/yeelight-interactive-light-experiences-copilot-skill-v0.1.0.zip": {
+      "size": 3781585,
+      "sha256": "0ef62caddc5986c4291487d572ef194eec46ff0e81847f012df0d2f79c3c0c9b",
+      "synchronizedAt": "2026-08-20T09:52:45.962Z"
+    },
+    "yeelight-skill-yeelight-interactive-light-experiences-v0.1.0/yeelight-interactive-light-experiences-release-v0.1.0.tar.gz": {
+      "size": 15092866,
+      "sha256": "952a70759c82b781523fcdf372293a63111176868a3a792f4a1d0bc58ae6331d",
+      "synchronizedAt": "2026-08-20T09:52:48.337Z"
     }
   },
-  "synchronizedAt": "2026-08-20T08:59:01.013Z"
+  "synchronizedAt": "2026-08-20T09:52:48.337Z"
 }
