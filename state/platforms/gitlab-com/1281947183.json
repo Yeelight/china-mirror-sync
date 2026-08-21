@@ -4,8 +4,9 @@
   "repository": "yeelight-smart-home-skills",
   "platform": "gitlab-com",
   "refs": {
-    "refs/heads/main": "94bf68cfeabc6aabdf7fb2635627c0ed638f3d67",
+    "refs/heads/main": "753b1ee7e1e338d0fcdade308003b0e787d1ad17",
     "refs/tags/yeelight-skill-yeelight-cinema-director-v0.1.0": "0e8721e3fe62e3700a08bf1b6780a8750cbb1d99",
+    "refs/tags/yeelight-skill-yeelight-cinema-director-v0.1.1": "753b1ee7e1e338d0fcdade308003b0e787d1ad17",
     "refs/tags/yeelight-skill-yeelight-interactive-light-experiences-v0.1.0": "94bf68cfeabc6aabdf7fb2635627c0ed638f3d67",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.0": "5c805f8e7243289b8e3c97ec793340c7151cb4b2",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.1": "de2a9ad91409b2ad41acd3feabea1babc159cc89",
@@ -297,7 +298,52 @@
       "size": 15092866,
       "sha256": "952a70759c82b781523fcdf372293a63111176868a3a792f4a1d0bc58ae6331d",
       "synchronizedAt": "2026-08-20T09:52:48.337Z"
+    },
+    "yeelight-skill-yeelight-cinema-director-v0.1.1/checksums.txt": {
+      "size": 830,
+      "sha256": "42a68d5d3114cd7d35bb311d6e6899369ad58438a5ac7768d592af068781ee49",
+      "synchronizedAt": "2026-08-21T04:57:27.192Z"
+    },
+    "yeelight-skill-yeelight-cinema-director-v0.1.1/channel-matrix.json": {
+      "size": 1872,
+      "sha256": "b9fa860dd025e6e4dbccf618958b36a12dea75d4a963786043c3fde500efc23f",
+      "synchronizedAt": "2026-08-21T04:57:27.209Z"
+    },
+    "yeelight-skill-yeelight-cinema-director-v0.1.1/release-manifest.json": {
+      "size": 1660,
+      "sha256": "f7204e470837970c5b7bc8999965b069528687e5390f368ddb2c0b06dc420f38",
+      "synchronizedAt": "2026-08-21T04:57:27.235Z"
+    },
+    "yeelight-skill-yeelight-cinema-director-v0.1.1/release-notes.md": {
+      "size": 324,
+      "sha256": "d3076daad8d271d95b25489ba39222b604c2a34583f439c0250b440fe5058cc6",
+      "synchronizedAt": "2026-08-21T04:57:27.279Z"
+    },
+    "yeelight-skill-yeelight-cinema-director-v0.1.1/yeelight-cinema-director-agent-skill-v0.1.1.zip": {
+      "size": 399796,
+      "sha256": "1cb6f24d30ef903beb0a7fc397ac7334b218fe1e5f385e13c071933fdccb86b5",
+      "synchronizedAt": "2026-08-21T04:57:28.264Z"
+    },
+    "yeelight-skill-yeelight-cinema-director-v0.1.1/yeelight-cinema-director-codex-plugin-v0.1.1.zip": {
+      "size": 402077,
+      "sha256": "533fb3136b7b7fe4c566ff883ad1889b00ba7d25a74874b11b9496c3c056f123",
+      "synchronizedAt": "2026-08-21T04:57:28.408Z"
+    },
+    "yeelight-skill-yeelight-cinema-director-v0.1.1/yeelight-cinema-director-copilot-skill-v0.1.1.zip": {
+      "size": 400309,
+      "sha256": "e724c9b11cb8f48f350eb4f3eb0e1bb77d351864bee688a0a8bc39583f89c3c3",
+      "synchronizedAt": "2026-08-21T04:57:28.440Z"
+    },
+    "yeelight-skill-yeelight-cinema-director-v0.1.1/yeelight-cinema-director-claude-skill-v0.1.1.zip": {
+      "size": 400302,
+      "sha256": "1473746bb755c403e925a59fe283845046d0a0fcbab24277c422a98f3af8d4c1",
+      "synchronizedAt": "2026-08-21T04:57:28.578Z"
+    },
+    "yeelight-skill-yeelight-cinema-director-v0.1.1/yeelight-cinema-director-release-v0.1.1.tar.gz": {
+      "size": 1550998,
+      "sha256": "d1e63524ff135a0405836c490c33d4f3d894d889a3ce5459c59d4e531a6e3cca",
+      "synchronizedAt": "2026-08-21T04:57:29.683Z"
     }
   },
-  "synchronizedAt": "2026-08-21T03:18:14.784Z"
+  "synchronizedAt": "2026-08-21T04:57:29.683Z"
 }
