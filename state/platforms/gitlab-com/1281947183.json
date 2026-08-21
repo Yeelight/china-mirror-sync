@@ -4,10 +4,12 @@
   "repository": "yeelight-smart-home-skills",
   "platform": "gitlab-com",
   "refs": {
-    "refs/heads/main": "753b1ee7e1e338d0fcdade308003b0e787d1ad17",
+    "refs/heads/main": "736636b760501758372b0abd497f1aa4a24b1547",
     "refs/tags/yeelight-skill-yeelight-cinema-director-v0.1.0": "0e8721e3fe62e3700a08bf1b6780a8750cbb1d99",
     "refs/tags/yeelight-skill-yeelight-cinema-director-v0.1.1": "753b1ee7e1e338d0fcdade308003b0e787d1ad17",
+    "refs/tags/yeelight-skill-yeelight-cinema-director-v0.1.2": "736636b760501758372b0abd497f1aa4a24b1547",
     "refs/tags/yeelight-skill-yeelight-interactive-light-experiences-v0.1.0": "94bf68cfeabc6aabdf7fb2635627c0ed638f3d67",
+    "refs/tags/yeelight-skill-yeelight-interactive-light-experiences-v0.1.1": "736636b760501758372b0abd497f1aa4a24b1547",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.0": "5c805f8e7243289b8e3c97ec793340c7151cb4b2",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.1": "de2a9ad91409b2ad41acd3feabea1babc159cc89",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.2": "f7b380d58c4602bfedc09a1b9ad588baa7574d63",
@@ -26,6 +28,7 @@
     "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.7": "19f0d4a4f781f5e6cf47b6f8b5e3fa55dd144dd9",
     "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.8": "e7c3c12ab1f38b8a778cc5db4eaeb4c9e95f73ab",
     "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.9": "86ad82f78a026d6428366a396bced116a4bec094",
+    "refs/tags/yeelight-skill-yeelight-wellness-lighting-v0.1.1": "736636b760501758372b0abd497f1aa4a24b1547",
     "refs/tags/yeelight-skill-yeelight-wifi-lan-control-v0.1.0": "60efa88bdf33f09987e76055e707a9610b9b33fa"
   },
   "managedAssets": {
@@ -343,7 +346,142 @@
       "size": 1550998,
       "sha256": "d1e63524ff135a0405836c490c33d4f3d894d889a3ce5459c59d4e531a6e3cca",
       "synchronizedAt": "2026-08-21T04:57:29.683Z"
+    },
+    "yeelight-skill-yeelight-wellness-lighting-v0.1.1/channel-matrix.json": {
+      "size": 1874,
+      "sha256": "73a3fbb33501ae053a9c4b6e8e97df464f58bc05d15b98698e4b23fc1dc4c102",
+      "synchronizedAt": "2026-08-21T09:51:07.239Z"
+    },
+    "yeelight-skill-yeelight-wellness-lighting-v0.1.1/release-manifest.json": {
+      "size": 1676,
+      "sha256": "2e711575e92f8a3a0403069cd843265827cd79dbdbfdaad95f1376db9dd46e54",
+      "synchronizedAt": "2026-08-21T09:51:07.324Z"
+    },
+    "yeelight-skill-yeelight-wellness-lighting-v0.1.1/checksums.txt": {
+      "size": 840,
+      "sha256": "8d450ee87c0d98e6c91a9f6e592f531a804b78928c0bdf36e29172c7622382f1",
+      "synchronizedAt": "2026-08-21T09:51:07.585Z"
+    },
+    "yeelight-skill-yeelight-wellness-lighting-v0.1.1/release-notes.md": {
+      "size": 326,
+      "sha256": "1cda19461283d621da8bbde6a49938df24110cca4ff1d118622ccc8723203978",
+      "synchronizedAt": "2026-08-21T09:51:07.616Z"
+    },
+    "yeelight-skill-yeelight-wellness-lighting-v0.1.1/yeelight-wellness-lighting-agent-skill-v0.1.1.zip": {
+      "size": 2027308,
+      "sha256": "73739db296cbac027b577dbe449bcb0db2e2a8aeb8b37b7284096ec4a19991b9",
+      "synchronizedAt": "2026-08-21T09:51:08.486Z"
+    },
+    "yeelight-skill-yeelight-wellness-lighting-v0.1.1/yeelight-wellness-lighting-claude-skill-v0.1.1.zip": {
+      "size": 2027820,
+      "sha256": "8b6b1f032dd5fa5acc6c6413d15f9caca53f30df32b208a95c0979bac9ceef50",
+      "synchronizedAt": "2026-08-21T09:51:08.568Z"
+    },
+    "yeelight-skill-yeelight-wellness-lighting-v0.1.1/yeelight-wellness-lighting-codex-plugin-v0.1.1.zip": {
+      "size": 2028811,
+      "sha256": "065a8baa2fc3a4e639a59b8cfe3697d0140d63babec8521faa6982f011418673",
+      "synchronizedAt": "2026-08-21T09:51:08.783Z"
+    },
+    "yeelight-skill-yeelight-wellness-lighting-v0.1.1/yeelight-wellness-lighting-copilot-skill-v0.1.1.zip": {
+      "size": 2027837,
+      "sha256": "b731f9405e57a1980350283b6444d283d5327ceceeba32feb08f4dae8bf43fbf",
+      "synchronizedAt": "2026-08-21T09:51:09.204Z"
+    },
+    "yeelight-skill-yeelight-interactive-light-experiences-v0.1.1/channel-matrix.json": {
+      "size": 1886,
+      "sha256": "84584155c866cb08e00e1316ad785b8266b900a1fdb39b33fcb73b28af9fe2ea",
+      "synchronizedAt": "2026-08-21T09:51:09.658Z"
+    },
+    "yeelight-skill-yeelight-wellness-lighting-v0.1.1/yeelight-wellness-lighting-release-v0.1.1.tar.gz": {
+      "size": 8094899,
+      "sha256": "da2e2a1c984ed7468f337c5ef5928bc8f44a0d4e5c36458381681e2dfb33fe3b",
+      "synchronizedAt": "2026-08-21T09:51:09.904Z"
+    },
+    "yeelight-skill-yeelight-interactive-light-experiences-v0.1.1/checksums.txt": {
+      "size": 900,
+      "sha256": "fd9cdce45f338730dd4cdb77f05687828ac32735dbcb38cf54372fd983a9e826",
+      "synchronizedAt": "2026-08-21T09:51:09.972Z"
+    },
+    "yeelight-skill-yeelight-interactive-light-experiences-v0.1.1/release-notes.md": {
+      "size": 338,
+      "sha256": "5795e30e45088bfee11ac3edd9f259925d230f85da6fed92fbad1ef82c390771",
+      "synchronizedAt": "2026-08-21T09:51:10.772Z"
+    },
+    "yeelight-skill-yeelight-interactive-light-experiences-v0.1.1/yeelight-interactive-light-experiences-agent-skill-v0.1.1.zip": {
+      "size": 3783866,
+      "sha256": "766b2fb46f15959e07ab1c20e2184df0abce9b81602330e88ac3f1eb533737e3",
+      "synchronizedAt": "2026-08-21T09:51:11.483Z"
+    },
+    "yeelight-skill-yeelight-interactive-light-experiences-v0.1.1/yeelight-interactive-light-experiences-codex-plugin-v0.1.1.zip": {
+      "size": 3785754,
+      "sha256": "c4b447420102f23c63301265863c904043f82f8ef194c4680faff1a5073f1389",
+      "synchronizedAt": "2026-08-21T09:51:12.059Z"
+    },
+    "yeelight-skill-yeelight-interactive-light-experiences-v0.1.1/yeelight-interactive-light-experiences-claude-skill-v0.1.1.zip": {
+      "size": 3784415,
+      "sha256": "cb8bf76599ddad0ac254cac5e0a22aaae24628a8f5327956c9e6c464b442522f",
+      "synchronizedAt": "2026-08-21T09:51:13.063Z"
+    },
+    "yeelight-skill-yeelight-interactive-light-experiences-v0.1.1/yeelight-interactive-light-experiences-copilot-skill-v0.1.1.zip": {
+      "size": 3784431,
+      "sha256": "ce54a8a22f79272c1a34706a7a3e7c815a15e3843bea1f05121c23c8a4b9a2ee",
+      "synchronizedAt": "2026-08-21T09:51:13.134Z"
+    },
+    "yeelight-skill-yeelight-interactive-light-experiences-v0.1.1/yeelight-interactive-light-experiences-release-v0.1.1.tar.gz": {
+      "size": 15103450,
+      "sha256": "a94e77b135b7470c69d6c6a549990f9c40042eff69d9183b979f756a8e182b9f",
+      "synchronizedAt": "2026-08-21T09:51:13.925Z"
+    },
+    "yeelight-skill-yeelight-cinema-director-v0.1.2/checksums.txt": {
+      "size": 830,
+      "sha256": "64d4ccd42779552c27f8a1716d8bda879b3fc332300fda3eff876e9430957c47",
+      "synchronizedAt": "2026-08-21T09:51:14.162Z"
+    },
+    "yeelight-skill-yeelight-cinema-director-v0.1.2/channel-matrix.json": {
+      "size": 1872,
+      "sha256": "15606f81de3305bb19903d99cf409332b6c921f9937aab0fea4065ac68596d5b",
+      "synchronizedAt": "2026-08-21T09:51:14.479Z"
+    },
+    "yeelight-skill-yeelight-cinema-director-v0.1.2/release-manifest.json": {
+      "size": 1660,
+      "sha256": "9fa545c39eb9eab238f0b15dbb6c98067d66333eabef30c6d66955f4652adfdd",
+      "synchronizedAt": "2026-08-21T09:51:15.023Z"
+    },
+    "yeelight-skill-yeelight-cinema-director-v0.1.2/release-notes.md": {
+      "size": 324,
+      "sha256": "a435d61c6c968807311429ff22f74dd8bc24e6b3712ff5246b9bd682beba80bb",
+      "synchronizedAt": "2026-08-21T09:51:15.262Z"
+    },
+    "yeelight-skill-yeelight-cinema-director-v0.1.2/yeelight-cinema-director-agent-skill-v0.1.2.zip": {
+      "size": 399953,
+      "sha256": "3bbc6f493d415a85341b661ddc4d4caa2b725a6d11bc38ff5bb54c7179174024",
+      "synchronizedAt": "2026-08-21T09:51:15.638Z"
+    },
+    "yeelight-skill-yeelight-interactive-light-experiences-v0.1.1/release-manifest.json": {
+      "size": 1749,
+      "sha256": "485b40ace7984a1f5116901e52c243fa97b95092639d47010ec6ab9a981a7166",
+      "synchronizedAt": "2026-08-21T09:51:15.714Z"
+    },
+    "yeelight-skill-yeelight-cinema-director-v0.1.2/yeelight-cinema-director-claude-skill-v0.1.2.zip": {
+      "size": 400454,
+      "sha256": "fac540f5794bc2154b4a5f0b9140b88fc86c9f3aaf9f58d4038ccfe4bd45bba0",
+      "synchronizedAt": "2026-08-21T09:51:16.232Z"
+    },
+    "yeelight-skill-yeelight-cinema-director-v0.1.2/yeelight-cinema-director-codex-plugin-v0.1.2.zip": {
+      "size": 402243,
+      "sha256": "442173ca4749eed4209a90a2120c68026d646509d558fdb4d89ae7fe812b3473",
+      "synchronizedAt": "2026-08-21T09:51:16.704Z"
+    },
+    "yeelight-skill-yeelight-cinema-director-v0.1.2/yeelight-cinema-director-copilot-skill-v0.1.2.zip": {
+      "size": 400461,
+      "sha256": "a5155c59835a9ebbc869c3b46b86086d11106d49a8899a9df7b70f5f3d1aa5fd",
+      "synchronizedAt": "2026-08-21T09:51:16.873Z"
+    },
+    "yeelight-skill-yeelight-cinema-director-v0.1.2/yeelight-cinema-director-release-v0.1.2.tar.gz": {
+      "size": 1551572,
+      "sha256": "5492fcc6f9d288991c58fe976ba50832831717e1ee1d5573d5a8b7a9760c5cdb",
+      "synchronizedAt": "2026-08-21T09:51:16.891Z"
     }
   },
-  "synchronizedAt": "2026-08-21T08:00:14.023Z"
+  "synchronizedAt": "2026-08-21T09:51:16.891Z"
 }
