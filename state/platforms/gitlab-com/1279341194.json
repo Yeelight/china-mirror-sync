@@ -4,8 +4,8 @@
   "repository": "scoop-bucket",
   "platform": "gitlab-com",
   "refs": {
-    "refs/heads/main": "6e5962f2ee287e4ca474caf240577b4d230a78ce"
+    "refs/heads/main": "46d9c2a4c6e81f00604d04493f1505d7d168e6fc"
   },
   "managedAssets": {},
-  "synchronizedAt": "2026-08-21T05:50:32.588Z"
+  "synchronizedAt": "2026-08-21T07:10:11.759Z"
 }
