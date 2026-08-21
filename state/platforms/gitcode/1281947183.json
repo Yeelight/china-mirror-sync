@@ -4,10 +4,12 @@
   "repository": "yeelight-smart-home-skills",
   "platform": "gitcode",
   "refs": {
-    "refs/heads/main": "753b1ee7e1e338d0fcdade308003b0e787d1ad17",
+    "refs/heads/main": "736636b760501758372b0abd497f1aa4a24b1547",
     "refs/tags/yeelight-skill-yeelight-cinema-director-v0.1.0": "0e8721e3fe62e3700a08bf1b6780a8750cbb1d99",
     "refs/tags/yeelight-skill-yeelight-cinema-director-v0.1.1": "753b1ee7e1e338d0fcdade308003b0e787d1ad17",
+    "refs/tags/yeelight-skill-yeelight-cinema-director-v0.1.2": "736636b760501758372b0abd497f1aa4a24b1547",
     "refs/tags/yeelight-skill-yeelight-interactive-light-experiences-v0.1.0": "94bf68cfeabc6aabdf7fb2635627c0ed638f3d67",
+    "refs/tags/yeelight-skill-yeelight-interactive-light-experiences-v0.1.1": "736636b760501758372b0abd497f1aa4a24b1547",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.0": "5c805f8e7243289b8e3c97ec793340c7151cb4b2",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.1": "de2a9ad91409b2ad41acd3feabea1babc159cc89",
     "refs/tags/yeelight-skill-yeelight-pro-app-builder-v0.1.2": "f7b380d58c4602bfedc09a1b9ad588baa7574d63",
@@ -26,6 +28,7 @@
     "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.7": "19f0d4a4f781f5e6cf47b6f8b5e3fa55dd144dd9",
     "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.8": "e7c3c12ab1f38b8a778cc5db4eaeb4c9e95f73ab",
     "refs/tags/yeelight-skill-yeelight-smart-home-v0.1.9": "86ad82f78a026d6428366a396bced116a4bec094",
+    "refs/tags/yeelight-skill-yeelight-wellness-lighting-v0.1.1": "736636b760501758372b0abd497f1aa4a24b1547",
     "refs/tags/yeelight-skill-yeelight-wifi-lan-control-v0.1.0": "60efa88bdf33f09987e76055e707a9610b9b33fa"
   },
   "managedAssets": {
@@ -348,7 +351,12 @@
       "size": 1550998,
       "sha256": "d1e63524ff135a0405836c490c33d4f3d894d889a3ce5459c59d4e531a6e3cca",
       "synchronizedAt": "2026-08-21T05:00:59.812Z"
+    },
+    "yeelight-skill-yeelight-interactive-light-experiences-v0.1.1/yeelight-interactive-light-experiences-release-v0.1.1.tar.gz": {
+      "size": 15103450,
+      "sha256": "a94e77b135b7470c69d6c6a549990f9c40042eff69d9183b979f756a8e182b9f",
+      "synchronizedAt": "2026-08-21T19:00:25.267Z"
     }
   },
-  "synchronizedAt": "2026-08-21T07:12:00.629Z"
+  "synchronizedAt": "2026-08-21T19:00:25.267Z"
 }
