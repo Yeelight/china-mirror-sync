@@ -4,9 +4,9 @@
   "repository": "dsh-yeelight-smart-home",
   "platform": "gitee",
   "refs": {
-    "refs/heads/main": "10a7cbb92b28b041e64939cae547cb53d8648995",
+    "refs/heads/main": "c761607107afb2b7310584f10b0b53d691506938",
     "refs/tags/v0.1.0": "52457e00e83e9cb7be2b8128a4ec7cd22670970b"
   },
   "managedAssets": {},
-  "synchronizedAt": "2026-09-01T05:16:16.474Z"
+  "synchronizedAt": "2026-09-01T10:13:31.654Z"
 }
