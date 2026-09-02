@@ -4,9 +4,10 @@
   "repository": "dsh-yeelight-smart-home",
   "platform": "gitcode",
   "refs": {
-    "refs/heads/main": "c761607107afb2b7310584f10b0b53d691506938",
-    "refs/tags/v0.1.0": "52457e00e83e9cb7be2b8128a4ec7cd22670970b"
+    "refs/heads/main": "51853943572305b06cc5a1c868351f6ffadde5d2",
+    "refs/tags/v0.1.0": "52457e00e83e9cb7be2b8128a4ec7cd22670970b",
+    "refs/tags/v0.2.0": "51853943572305b06cc5a1c868351f6ffadde5d2"
   },
   "managedAssets": {},
-  "synchronizedAt": "2026-09-02T00:17:57.786Z"
+  "synchronizedAt": "2026-09-02T05:52:57.609Z"
 }
