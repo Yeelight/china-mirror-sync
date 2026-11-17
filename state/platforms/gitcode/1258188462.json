@@ -4,7 +4,7 @@
   "repository": "ha_yeelight_dashboard",
   "platform": "gitcode",
   "refs": {
-    "refs/heads/main": "7b76ea98e474c60be51fa65612b9238555fd3427",
+    "refs/heads/main": "185957d9fd6dc9bf6233eb42eb0294d92d720690",
     "refs/tags/v0.1.0": "42c4f5be334e7812b552995a078b5aff6270f3e6",
     "refs/tags/v0.1.1": "893de8b9f6962f645c87674f8495439e1e75ef70",
     "refs/tags/v0.1.2": "0ac680b5aa5ed0de45363af2950846e3148df697",
@@ -17,5 +17,5 @@
       "synchronizedAt": "2026-07-16T05:02:16.709Z"
     }
   },
-  "synchronizedAt": "2026-11-17T04:33:56.151Z"
+  "synchronizedAt": "2026-11-17T14:32:55.452Z"
 }
